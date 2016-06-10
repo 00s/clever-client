@@ -1,2 +1,2 @@
 # clever-client
-The Client side of the Clever
+The Client side of the Moon
