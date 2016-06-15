@@ -1,0 +1,10 @@
+{
+  "name": "clever-client",
+  "homepage": "https://github.com/00s/clever-client",
+  "authors": [
+    "Pedro Rafael <pedrorafael0251@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT"
+}
