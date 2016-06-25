@@ -2,9 +2,15 @@
   "name": "clever-client",
   "homepage": "https://github.com/00s/clever-client",
   "authors": [
-    "Pedro Rafael <pedrorafael0251@gmail.com>"
+    "Pedro Rafael <pedrorafael0251@gmail.com>",
+    "Daniel Bastos <danielbastos@live.com>"
   ],
   "description": "",
   "main": "index.html",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-easyfb": "~1.5.1",
+    "angular-ui-router": "~0.3.1"
+  }
 }
