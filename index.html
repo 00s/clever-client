@@ -3,15 +3,18 @@
 <head>
 	<meta charset="utf-8"/>
     <title>Clever</title>
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/angular-easyfb/build/angular-easyfb.min.js"></script>
-	<script src="app.js"></script>
+	<link rel="stylesheet" href="css/button.css">
+	<link rel="stylesheet" href="css/icon.css">
+	<script src="main.js"></script>
 </head>
-<body> 
+<body>
 	<div class="container" >
 		<div ng-controller = 'UserCtrl'>
-    		<button ng-click="loginorcreate()"> Entrar com Facebook </button>	
+    		<button class="ui mini facebook button" ng-click="loginorcreate()">
+					<i class="facebook icon"></i>
+					 Login
+				</button>
 		</div>
 	</div>
-</body>	
+</body>
 </hmtl>
