@@ -18,7 +18,7 @@ gulp.task('build-js', function() {
     .src(plugins.mainBowerFiles().concat(jsFiles))
     // Concatena todos no arquivo main.js
 		.pipe(plugins.concat('main.js'))
-    // Minimiza
+    // Minifica
 		.pipe(plugins.uglify())
     // Salva
 		.pipe(gulp.dest('./'));
