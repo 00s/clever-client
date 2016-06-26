@@ -20,7 +20,7 @@
     Factory responsável pelo workflow de Login
     @factory
   */
-  var LoginFactory = function (ezfb, $http) {
+  var LoginFactory = function (ezfb, $http, $q) {
     var factory = { fb: {}, clever: {} };
 
     /*
@@ -35,11 +35,11 @@
             return ezfb.login();
           }
           // Se ele estiver logado, ignore esse passo
-          return Promise.resolve(res);
+          return $q.when(res);
         })
         .then(function (res) {
           // Retorna o Token
-          return Promise.resolve(res.authResponse.accessToken);
+          return $q.when(res.authResponse.accessToken);
         });
     };
 
@@ -56,7 +56,7 @@
           localStorage.setItem('accessToken', res.data.access_token);
           localStorage.setItem('refreshToken', res.data.refresh_token);
 
-          return Promise.resolve(res);
+          return $q.when(res);
         });
     };
 
@@ -72,7 +72,7 @@
           localStorage.setItem('accessToken', res.data.access_token);
           localStorage.setItem('refreshToken', res.data.refresh_token);
 
-          return Promise.resolve(res);
+          return $q.when(res);
         });
     };
 
@@ -91,7 +91,7 @@
     return factory;
   };
 
-  exports.LoginFactory = ['ezfb', '$http', LoginFactory];
+  exports.LoginFactory = ['ezfb', '$http', '$q', LoginFactory];
 
   // Instanciação do Módulo
 
