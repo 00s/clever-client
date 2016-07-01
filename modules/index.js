@@ -26,7 +26,7 @@
   */
 
   angular
-    .module('clever', ['clever.login'])
+    .module('clever', ['clever.login', 'clever.config'])
     .controller('UserCtrl', exports.UserCtrl);
 
 })();
