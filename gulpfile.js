@@ -25,10 +25,22 @@ gulp.task('build-js', function() {
 
 });
 
+// Definição da task que vai gerar a build do CSS
+gulp.task('build-css', function () {
+	gulp
+		// Busca o arquivo principal do .styl
+		.src('./css/style.styl')
+		// Dá build nele e em tudo que ele importa
+		.pipe(plugins.stylus())
+		// Salva em ./static
+		.pipe(gulp.dest('./static'));
+});
+
 // Essa task vai executar build-js toda vez que algo mudar
 // em um arquivo da pasta ./modules
 gulp.task('watch', function () {
   gulp.watch('modules/**/*.js', ['build-js']);
+	gulp.watch('css/**/*.styl', ['build-css']);
 });
 
 // Rodar o gulp sem parâmetros roda a task watch
