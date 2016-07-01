@@ -1,0 +1,105 @@
+@import './variables.styl'
+
+/*******************************
+            Cards
+*******************************/
+
+#search .card {
+  border-radius: 0;
+  min-width: 264px;
+  max-width: 264px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  .header {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .meta {
+    text-align: center;
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: justify;
+  }
+}
+
+/*******************************
+        Semantic-ui fixes
+*******************************/
+
+#search {
+  input[disabled]{
+    opacity: 1;
+  }
+
+  & .input {
+    margin-right: 15px;
+  }
+}
+
+/*******************************
+            Layout
+*******************************/
+
+#search {
+  padding: 0;
+
+  & > .text.menu {
+    margin: 0 auto;
+  }
+
+  & > .grid {
+    margin: 20px auto;
+  }
+}
+
+/*******************************
+          Variations
+*******************************/
+
+@media (min-width: $laptop.breakpoint){
+  #search .grid, .text.menu {
+    width: $maxWidth;
+  }
+}
+
+@media (min-width: $tablet.breakpoint) and (max-width: $laptop.breakpoint){
+  #search .grid, .text.menu {
+    width: $laptop.gridSize;
+  }
+}
+
+@media (min-width: $phone.breakpoint) and (max-width: $tablet.breakpoint){
+  #search .text.menu {
+    display: none;
+  }
+
+  #search .grid, .text.menu {
+    width: $tablet.gridSize;
+
+    .card {
+      min-width: 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: $phone.breakpoint){
+  #search .text.menu {
+    display: none;
+  }
+
+  #search .grid, .text.menu {
+    width: $phone.gridSize;
+
+    .card {
+      margin-bottom: 8px;
+      border-radius: 0.249em;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+}

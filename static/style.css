@@ -1,3 +1,78 @@
+#search .card {
+  border-radius: 0;
+  min-width: 264px;
+  max-width: 264px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#search .card .header {
+  margin-top: 10px;
+  text-align: center;
+}
+#search .card .meta {
+  text-align: center;
+}
+#search .card p {
+  margin-top: 10px;
+  text-align: justify;
+}
+#search input[disabled] {
+  opacity: 1;
+}
+#search .input {
+  margin-right: 15px;
+}
+#search {
+  padding: 0;
+}
+#search > .text.menu {
+  margin: 0 auto;
+}
+#search > .grid {
+  margin: 20px auto;
+}
+@media (min-width: 1174px) {
+  #search .grid,
+  .text.menu {
+    width: 1056px;
+  }
+}
+@media (min-width: 820px) and (max-width: 1174px) {
+  #search .grid,
+  .text.menu {
+    width: 792px;
+  }
+}
+@media (min-width: 556px) and (max-width: 820px) {
+  #search .text.menu {
+    display: none;
+  }
+  #search .grid,
+  .text.menu {
+    width: 95%;
+  }
+  #search .grid .card,
+  .text.menu .card {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 556px) {
+  #search .text.menu {
+    display: none;
+  }
+  #search .grid,
+  .text.menu {
+    width: 95%;
+  }
+  #search .grid .card,
+  .text.menu .card {
+    margin-bottom: 8px;
+    border-radius: 0.249em;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
 body {
   margin-top: 96px !important;
 }
