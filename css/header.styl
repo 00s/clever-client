@@ -1,7 +1,7 @@
 @import './variables.styl'
 
 body {
-  margin-top: $header.height + $header.margin !important;
+  padding-top: $header.margin !important;
 }
 
 #header {
@@ -21,51 +21,23 @@ body {
 @media (min-width: $laptop.breakpoint){
   #header .text.menu {
     width: $maxWidth;
-
-    .right.menu .item {
-      display: none;
-    }
   }
 }
 
 @media (min-width: $tablet.breakpoint) and (max-width: $laptop.breakpoint){
   #header .text.menu {
     width: $laptop.gridSize;
-
-    .right.menu .item {
-      display: none;
-    }
   }
 }
 
 @media (min-width: $phone.breakpoint) and (max-width: $tablet.breakpoint){
   #header .text.menu {
     width: $tablet.gridSize;
-
-    .right.menu {
-      .ui.input {
-        display: none;
-      }
-
-      .item {
-        display: inline;
-      }
-    }
   }
 }
 
 @media (max-width: $phone.breakpoint){
   #header .text.menu {
     width: $phone.gridSize;
-
-    .right.menu {
-      .ui.input {
-        display: none;
-      }
-
-      .item {
-        display: inline;
-      }
-    }
   }
 }
