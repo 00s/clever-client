@@ -14,6 +14,11 @@
         url: '/search',
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl'
+      })
+      .state('result', {
+        url: '/result',
+        templateUrl: 'views/result.html',
+        controller: 'ResultCtrl'
       });
   };
 

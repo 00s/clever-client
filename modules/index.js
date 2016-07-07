@@ -36,6 +36,12 @@
   */
 
   var ResultCtrl = function ($scope) {
+    $scope.datePicker = {
+      m: [false, true, false, true, false],
+      t: [false, false, false, false, false],
+      n: [false, false, false, false, false]
+    };
+    
     $scope.teachers = [
       {
         nome: 'Nirvana Dantas',
