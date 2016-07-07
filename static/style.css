@@ -1,77 +1,165 @@
-#search .card {
+.ui.form {
+  padding: 0 20px;
+  font-size: 14px;
+/*--------------------
+          Inputs
+  ---------------------*/
+/*--------------------
+        Parte dos R$
+  ---------------------*/
+/*--------------------
+          Botoes
+  ---------------------*/
+}
+.ui.form .field > label {
+  font-weight: normal;
+  margin: 0;
+  color: #665;
+  margin-top: 20px;
+}
+.ui.form .field.slim input[type=text],
+.ui.form .field input[type=text]:active {
+  background-color: transparent;
+  border: none;
   border-radius: 0;
+  border-bottom: 1px solid #b7b7b7;
+  padding: 5px 1px;
+  font-size: 26px;
+}
+.ui.form .ui.statistics .statistic:first-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.ui.form .ui.statistics .statistic:last-child {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.ui.form .ui.statistics .divider {
+  height: 28px;
+  margin: 0 10px;
+  font-size: 1.5em;
+  line-height: 34px;
+}
+.ui.form .ui.button {
+  margin-bottom: 20px;
+}
+.ui.form .noUi-horizontal {
+  height: 2px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+.ui.form .noUi-target {
+  border-color: #4a4a4a;
+}
+.ui.form .noUi-base {
+  top: -5px;
+}
+.ui.form .noUi-handle {
+  width: 30px;
+  height: 30px;
+  left: -17px;
+  top: -9px;
+  border-radius: 2em;
+  background-color: #4a4a4a;
+  box-shadow: none;
+  -webkit-transition: box-shadow 1s;
+  transition: box-shadow 1s;
+}
+.ui.form .noUi-handle.noUi-active {
+  box-shadow: 0 0 15px 15px #c9c9c9;
+}
+.ui.form .noUi-handle:before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+.ui.form .noUi-handle:after {
+  display: none;
+}
+.ui.form .noUi-value {
+  margin-top: 10px;
+  position: absolute;
+  text-align: center;
+  color: #999;
+}
+.ui.form .noUi-value:last-child {
+  left: 90% !important;
+}
+.ui.form .noUi-value:first-child {
+  left: 10% !important;
+}
+table.date.picker {
+  margin: 10px auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  table-layout: fixed;
+}
+table.date.picker th {
+  font-weight: 100;
+}
+table.date.picker td:first-child {
+  background-color: transparent;
+  width: 10px;
+  font-weight: 100;
+}
+table.date.picker td {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.3rem;
+  background-color: #ddd;
+}
+table.date.picker td.selected {
+  background-color: #5c5c5c;
+}
+.bold {
+  font-weight: 900 !important;
+  color: #000;
+}
+#resultScreen h1.ui.header {
+  padding: 0 20px;
+}
+#resultScreen span.sub.header {
+  margin-top: 5px;
+}
+#resultScreen .ui.labels {
+  margin: 0 auto;
+  display: table;
+  margin-top: 30px;
+}
+#resultScreen .row {
+  display: flex;
+  overflow: scroll;
+  width: 100%;
+}
+#resultScreen .card {
+  height: 370px;
   min-width: 264px;
   max-width: 264px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 15px 5px;
+  border-radius: 0;
 }
-#search .card .header {
-  margin-top: 10px;
+#resultScreen .card .header {
+  margin-top: 15px;
   text-align: center;
 }
-#search .card .meta {
+#resultScreen .card .meta {
   text-align: center;
 }
-#search .card p {
+#resultScreen .card p {
   margin-top: 10px;
   text-align: justify;
 }
-#search input[disabled] {
-  opacity: 1;
+table.result.date.picker tr:first-child,
+table.result.date.picker td:first-child {
+  display: none;
 }
-#search .input {
-  margin-right: 15px;
-}
-#search {
-  padding: 0;
-}
-#search > .text.menu {
-  margin: 0 auto;
-}
-#search > .grid {
-  margin: 20px auto;
-}
-@media (min-width: 1174px) {
-  #search .grid,
-  .text.menu {
-    width: 1056px;
-  }
-}
-@media (min-width: 820px) and (max-width: 1174px) {
-  #search .grid,
-  .text.menu {
-    width: 792px;
-  }
-}
-@media (min-width: 556px) and (max-width: 820px) {
-  #search .text.menu {
-    display: none;
-  }
-  #search .grid,
-  .text.menu {
-    width: 95%;
-  }
-  #search .grid .card,
-  .text.menu .card {
-    min-width: 50%;
-    max-width: 50%;
-  }
-}
-@media (max-width: 556px) {
-  #search .text.menu {
-    display: none;
-  }
-  #search .grid,
-  .text.menu {
-    width: 95%;
-  }
-  #search .grid .card,
-  .text.menu .card {
-    margin-bottom: 8px;
-    border-radius: 0.249em;
-    min-width: 100%;
-    max-width: 100%;
-  }
+table.result.date.picker td {
+  width: 30px;
+  height: 30px;
 }
 body {
   margin-top: 96px !important;
