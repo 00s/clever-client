@@ -1,105 +1,174 @@
-@import './variables.styl'
+/*******************************
+      Formulário de Busca
+*******************************/
+.ui.form {
+  padding: 0 20px;
+  font-size: 14px;
+
+  /*--------------------
+          Inputs
+  ---------------------*/
+  .field {
+    & > label {
+      font-weight: normal;
+      margin: 0;
+      color: #665;
+      margin-top: 20px;
+    }
+
+    &.slim input[type=text], input[type=text]:active{
+      background-color: transparent;
+
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid #b7b7b7;
+
+      padding: 5px 1px;
+      font-size: 26px;
+    }
+  }
+
+  /*--------------------
+        Parte dos R$
+  ---------------------*/
+  .ui.statistics {
+    .statistic:first-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    .statistic:last-child {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      height: 28px;
+      margin: 0 10px;
+
+      font-size: 1.5em;
+      line-height: 34px;
+    }
+  }
+
+  /*--------------------
+          Botoes
+  ---------------------*/
+  .ui.button {
+    margin-bottom: 20px;
+  }
+}
 
 /*******************************
-            Cards
+            Slider
 *******************************/
+.ui.form {
+  /*--------------------
+      Linha de Base
+  ---------------------*/
+  .noUi-horizontal {
+    height: 2px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+  }
 
-#search .card {
-  border-radius: 0;
-  min-width: 264px;
-  max-width: 264px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  .noUi-target {
+    border-color: #4A4A4A;
+  }
 
-  .header {
+  .noUi-base {
+    top: -5px;
+  }
+
+  /*--------------------
+          Handles
+  ---------------------*/
+  .noUi-handle {
+    width: 30px;
+    height: 30px;
+    left: -17px;
+    top: -9px;
+
+    border-radius: 2em;
+    background-color: #4A4A4A;
+    box-shadow: none;
+
+    -webkit-transition: box-shadow 1s;
+    transition: box-shadow 1s;
+
+    &.noUi-active {
+      box-shadow: 0 0 15px 15px #C9C9C9;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -40%;
+
+      width: 50px; height: 50px;
+
+      background-color: transparent;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  /*--------------------
+        Marcadores
+  ---------------------*/
+  .noUi-value {
     margin-top: 10px;
+    position: absolute;
     text-align: center;
-  }
+    color: #999;
 
-  .meta {
-    text-align: center;
-  }
+    &:last-child {
+      left: 90% !important;
+    }
 
-  p {
-    margin-top: 10px;
-    text-align: justify;
-  }
-}
-
-/*******************************
-        Semantic-ui fixes
-*******************************/
-
-#search {
-  input[disabled]{
-    opacity: 1;
-  }
-
-  & .input {
-    margin-right: 15px;
-  }
-}
-
-/*******************************
-            Layout
-*******************************/
-
-#search {
-  padding: 0;
-
-  & > .text.menu {
-    margin: 0 auto;
-  }
-
-  & > .grid {
-    margin: 20px auto;
-  }
-}
-
-/*******************************
-          Variations
-*******************************/
-
-@media (min-width: $laptop.breakpoint){
-  #search .grid, .text.menu {
-    width: $maxWidth;
-  }
-}
-
-@media (min-width: $tablet.breakpoint) and (max-width: $laptop.breakpoint){
-  #search .grid, .text.menu {
-    width: $laptop.gridSize;
-  }
-}
-
-@media (min-width: $phone.breakpoint) and (max-width: $tablet.breakpoint){
-  #search .text.menu {
-    display: none;
-  }
-
-  #search .grid, .text.menu {
-    width: $tablet.gridSize;
-
-    .card {
-      min-width: 50%;
-      max-width: 50%;
+    &:first-child {
+      left: 10% !important;
     }
   }
 }
 
-@media (max-width: $phone.breakpoint){
-  #search .text.menu {
-    display: none;
+/*******************************
+          Date Picker
+*******************************/
+table.date.picker {
+  margin: 10px auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  table-layout: fixed;
+
+  th {
+    font-weight: 100;
   }
 
-  #search .grid, .text.menu {
-    width: $phone.gridSize;
-
-    .card {
-      margin-bottom: 8px;
-      border-radius: 0.249em;
-      min-width: 100%;
-      max-width: 100%;
-    }
+  td:first-child {
+    background-color: transparent;
+    width: 10px;
+    font-weight: 100;
   }
+
+  td {
+    width: 50px; height: 50px;
+    border-radius: .3rem;
+    background-color: #DDDDDD;
+  }
+
+  td.selected {
+    background-color: #5C5C5C;
+  }
+}
+
+/*******************************
+     Semantic-UI alteracoes
+*******************************/
+.bold {
+  font-weight: 900 !important;
+  color: black;
 }

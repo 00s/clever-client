@@ -13,7 +13,7 @@
       .state('search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        controller: 'ResultCtrl'
+        controller: 'SearchCtrl'
       });
   };
 

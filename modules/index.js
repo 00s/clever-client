@@ -18,6 +18,19 @@
 
   exports.UserCtrl = ['$scope', 'LoginFactory', UserCtrl];
 
+  var SearchCtrl = function ($scope) {
+    $scope.lowerPrice = 50;
+    $scope.upperPrice = 90;
+
+    $scope.datePicker = {
+      m: [false, false, false, false, false],
+      t: [false, false, false, false, false],
+      n: [false, false, false, false, false]
+    };
+  };
+
+  exports.SearchCtrl = ["$scope", SearchCtrl];
+
   /*
 
   */
@@ -69,6 +82,7 @@
                         'clever.directives'
                       ])
     .controller('UserCtrl', exports.UserCtrl)
+    .controller('SearchCtrl', exports.SearchCtrl)
     .controller('ResultCtrl', exports.ResultCtrl);
 
 })();

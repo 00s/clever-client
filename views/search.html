@@ -1,45 +1,33 @@
-<div class="ui very basic segment" id="search">
-  <div class="ui text menu">
-    <div class="ui left icon input">
-      <i class="marker icon"></i>
-      <input type="text" disabled value="Cidade Nova">
-    </div>
-
-    <div class="ui left icon input">
-      <i class="dollar icon"></i>
-      <input type="text" disabled value="30 - 150">
-    </div>
-
-    <div class="ui left icon input">
-      <i class="calendar icon"></i>
-      <input type="text" disabled value="Seg - Qua - Sex">
-    </div>
-
-    <!-- <div class="right menu">
-      <div class="ui icon buttons">
-        <button class="ui white active button"><i class="list layout icon"></i></button>
-        <button class="ui white button"><i class="grid layout icon"></i></button>
-      </div>
-    </div> -->
+<div class="ui form">
+  <div class="slim field">
+    <label>Estou procurando por uma aula de</label>
+    <input type="text">
   </div>
 
-  <div class="ui grid">
-      <div class="ui column card" ng-repeat='teacher in teachers'>
-        <div class="content">
-          <div class="ui centered small circular image">
-            <img src="{{teacher.img}}">
-          </div>
-          <div class="header">{{teacher.nome}}</div>
-          <div class="meta">{{teacher.materia}}</div>
-        </div>
-        <div class="content">
-          <div class="description">
-            {{teacher.desc}}
-          </div>
-        </div>
-        <div class="extra content">
-          <div class="header">${{teacher.valor}}</div>
-        </div>
-      </div>
+  <div class="slim field">
+    <label>Na <span class="bold">cidade de</span></label>
+    <input type="text">
   </div>
+
+  <div class="field">
+    <label><span class="bold">Custando</span> entre</label>
+    <div class="ui tiny statistics">
+      <div class="statistic">
+        <div class="value">R$ {{lowerPrice}}</div>
+      </div>
+      <span class="divider"> e </span>
+      <div class="statistic">
+        <div class="value">R$ {{upperPrice}}</div>
+      </div>
+    </div>
+  </div>
+
+  <clever:slider></clever:slider>
+
+  <div class="field">
+    <label>Em algum desses <span class="bold">horários</span></label>
+    <clever:date-picker></clever:date-picker>
+  </div>
+
+  <div class="ui fluid button">Buscar Professor</div>
 </div>
