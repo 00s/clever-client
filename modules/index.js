@@ -64,7 +64,10 @@
   */
 
   angular
-    .module('clever', ['clever.login', 'clever.config'])
+    .module('clever', [
+                        'clever.login', 'clever.config',
+                        'clever.directives'
+                      ])
     .controller('UserCtrl', exports.UserCtrl)
     .controller('ResultCtrl', exports.ResultCtrl);
 
