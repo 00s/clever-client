@@ -162,13 +162,13 @@ table.result.date.picker td {
   height: 30px;
 }
 body {
-  padding-top: 20px !important;
+  padding-top: 55px !important;
 }
 #header {
   background-color: #fff;
   border-bottom: 1px solid #cbcbcc;
   width: 100%;
-  min-height: 76px;
+  min-height: 56px;
   background: #fff;
 }
 #header .text.menu {
