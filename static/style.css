@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i';
 .ui.form {
   padding: 0 20px;
   font-size: 14px;
@@ -132,26 +133,13 @@ table.date.picker td.selected {
 }
 #resultScreen .row {
   display: flex;
-  overflow: scroll;
+  orientation: horizontal;
+  overflow-y: visible;
   width: 100%;
+  margin-top: 70px;
 }
-#resultScreen .card {
-  height: 370px;
-  min-width: 264px;
-  max-width: 264px;
-  margin: 15px 5px;
-  border-radius: 0;
-}
-#resultScreen .card .header {
-  margin-top: 15px;
-  text-align: center;
-}
-#resultScreen .card .meta {
-  text-align: center;
-}
-#resultScreen .card p {
-  margin-top: 10px;
-  text-align: justify;
+#resultScreen .wrapper {
+  overflow-x: scroll;
 }
 table.result.date.picker tr:first-child,
 table.result.date.picker td:first-child {
@@ -174,29 +162,9 @@ body {
 #header .text.menu {
   margin: 0 auto;
 }
-@media (min-width: 1174px) {
-  #header .text.menu {
-    width: 1056px;
-  }
-}
-@media (min-width: 820px) and (max-width: 1174px) {
-  #header .text.menu {
-    width: 792px;
-  }
-}
-@media (min-width: 556px) and (max-width: 820px) {
-  #header .text.menu {
-    width: 95%;
-  }
-}
-@media (max-width: 556px) {
-  #header .text.menu {
-    width: 95%;
-  }
-}
 body {
   margin: 0;
-  background: #eef1f1;
+  background: #fff;
 }
 .ui.centered.image {
   display: block;
@@ -214,4 +182,60 @@ body {
 #loginBody {
   margin: 50px auto;
   width: 45%;
+}
+.ui.clever.card {
+  height: 328px;
+  min-width: 300px;
+  max-width: 300px;
+  margin: 15px 15px;
+  padding-left: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.5);
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #6f6f6f;
+}
+.ui.clever.card .content {
+  padding: 0;
+}
+.ui.clever.card .ui.image {
+  margin-top: -65px;
+}
+.ui.clever.card .ui.image img {
+  border-radius: 34px;
+  height: 126px;
+  width: 126px;
+  border: 3px solid #fff;
+}
+.ui.clever.card .name {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+}
+.ui.clever.card .rating {
+  position: absolute;
+  top: -40px;
+  right: 40px;
+}
+.ui.clever.card .pricing {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 16px;
+}
+.ui.clever.card .description {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+.ui.clever.card .more {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
 }

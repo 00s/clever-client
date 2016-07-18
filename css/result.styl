@@ -28,34 +28,15 @@
   ---------------------*/
   .row {
     display: flex;
-    overflow: scroll;
+    orientation: horizontal;
+    overflow-y: visible;
     width: 100%;
-  }
-}
 
-/*******************************
-            Cards
-*******************************/
-#resultScreen .card {
-  height: 370px;
-  min-width: 264px;
-  max-width: 264px;
-
-  margin: 15px 5px;
-  border-radius: 0;
-
-  .header {
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 70px;
   }
 
-  .meta {
-    text-align: center;
-  }
-
-  p {
-    margin-top: 10px;
-    text-align: justify;
+  .wrapper {
+    overflow-x: scroll;
   }
 }
 

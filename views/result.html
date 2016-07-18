@@ -15,28 +15,29 @@
     </span>
   </h1>
 
-  <div class="row">
-    <div class="ui card" ng-repeat='teacher in teachers'>
-      <div class="content">
-        <div class="ui centered small circular image">
-          <img src="{{teacher.img}}">
+  <div class="wrapper">
+    <div class="row">
+      <div class="ui clever card" ng-repeat='teacher in teachers'>
+        <div class="content">
+          <div class="ui image">
+            <img src="{{teacher.img}}">
+          </div>
+          <div class="rating">
+              <i class="fitted yellow star icon"></i>
+              <i class="fitted yellow star icon"></i>
+              <i class="fitted yellow half empty star icon"></i>
+              <i class="fitted yellow empty star icon"></i>
+              <i class="fitted yellow empty star icon"></i>
+          </div>
+          <div class="pricing">
+            R$ {{teacher.valor}}
+          </div>
+          <div class="name">{{teacher.nome}}</div>
+          <div class="description">
+            {{teacher.desc}}
+          </div>
         </div>
-        <div class="header">{{teacher.nome}}</div>
-        <div class="meta">
-            <i class="fitted yellow star icon"></i>
-            <i class="fitted yellow star icon"></i>
-            <i class="fitted yellow half empty star icon"></i>
-            <i class="fitted yellow empty star icon"></i>
-            <i class="fitted yellow empty star icon"></i>
-        </div>
-      </div>
-      <div class="content">
-        <div class="description">
-          {{teacher.desc}}
-        </div>
-      </div>
-      <div class="extra content">
-        <div class="header">${{teacher.valor}}</div>
+        <div class="more">Ver mais</div>
       </div>
     </div>
   </div>
