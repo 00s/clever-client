@@ -19,7 +19,7 @@ gulp.task('build-js', function() {
     // Concatena todos no arquivo main.js
 		.pipe(plugins.concat('main.js'))
     // Minifica
-		.pipe(plugins.uglify())
+		// .pipe(plugins.uglify())
     // Salva
 		.pipe(gulp.dest('./'));
 

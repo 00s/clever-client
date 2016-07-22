@@ -27,6 +27,21 @@
       t: [false, false, false, false, false],
       n: [false, false, false, false, false]
     };
+
+    $scope.buscar = function () {
+      var $form = $('#formScreen');
+      var $result = $('#resultScreen');
+
+      console.log($result.css('display'));
+
+      if($result.css('display') == 'none'){
+        $form.addClass('slideOutLeft');
+        $form.css('display', 'none');
+
+        $result.css('display', 'block');
+        $result.addClass('slideInRight');
+      }
+    };
   };
 
   exports.SearchCtrl = ["$scope", SearchCtrl];
@@ -41,7 +56,7 @@
       t: [false, false, false, false, false],
       n: [false, false, false, false, false]
     };
-    
+
     $scope.teachers = [
       {
         nome: 'Nirvana Dantas',
@@ -53,7 +68,7 @@
       {
         nome: 'Daniel Bastos',
         materia: 'Matemática',
-        desc: 'Eu sou uma péssima professora! Posso estragar o futuro do seu filho?',
+        desc: 'An Ugly Myspace Profile Will Sure Ruin Your Reputation An Ugly Myspace Profile Will Sure Ruin Your Reputation',
         img: 'https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/13001103_1119760978082535_6893232842262746209_n.jpg?oh=59f0060bf101fb371d9005b1432aa1c3&oe=57F7FB90',
         valor: 80
       },

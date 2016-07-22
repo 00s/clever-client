@@ -1,22 +1,31 @@
+@import "./variables.styl"
+
 /*******************************
             Cards
 *******************************/
 .ui.clever.card {
-  height: 328px;
-  min-width: 300px;
-  max-width: 300px;
+  height: $card.height;
+  min-width: $card.width;
+  max-width: $card.width;
 
   margin: 15px 15px;
-  padding-left: 20px;
+  padding-left: $card.padding;
+  padding-right: $card.padding;
 
   border-radius: 8px;
-  box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.50);
+  border: 2px solid $colors.borders;
+  box-shadow: none;
 
-  font-family: 'Merriweather Sans', sans-serif;
-  color: #6F6F6F;
+  font-family: 'Merriweather', serif;
+  color: $colors.text;
+
+  &:hover {
+    box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.50);
+  }
 
   .content {
     padding: 0;
+    font-family: 'Lato', sans-serif;
   }
 
   .ui.image {
@@ -30,44 +39,71 @@
   }
 
   .name {
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 23px;
+    margin-bottom: 24px;
 
-    font-family: inherit;
-    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
     font-weight: bold;
+
+    line-height: 30px;
   }
 
   .rating {
     position: absolute;
+    width: 100%;
     top: -40px;
-    right: 40px;
+
+    padding-left: 126px;
+    padding-right: 20px;
+
+    text-align: center;
   }
 
   .pricing {
     position: absolute;
     top: 20px;
-    right: 40px;
+    width: 100%;
+
+    padding-left: 126px;
+    padding-right: 20px;
+
+    text-align: center;
 
     font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;
   }
 
   .description {
-    font-size: 16px;
-    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
     line-height: 20px;
     letter-spacing: 0px;
   }
 
   .more {
+    cursor: pointer;
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0px;
+    height: 50px;
+    line-height: 50px;
 
+    margin-left: -20px;
+
+    width: 100%;
+    text-align: center;
+
+    border-top: 2px solid $colors.borders;
+
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
+  }
+}
+
+@media(min-width: $laptop.breakpoint){
+  .ui.clever.card {
+    margin-top: 70px;
   }
 }

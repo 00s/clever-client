@@ -1,44 +1,42 @@
-<div id="resultScreen">
-  <div class="ui labels">
-    <div class="ui large label">Matemática</div>
-    <div class="ui large label">Natal, RN</div>
-    <div class="ui large label">R$50 / R$90</div>
-  </div>
+<div class="ui labels">
+  <div class="ui large label">Matemática</div>
+  <div class="ui large label">Natal, RN</div>
+  <div class="ui large label">R$50 / R$90</div>
+</div>
 
-  <clever:date-picker class="result"></clever:date-picker>
+<clever:date-picker class="result"></clever:date-picker>
 
-  <h1 class="ui header">
-    Agora é só escolher...
-    <span class="sub header">
-      <span class="bold">Melhores avaliados</span> primeiro
-      <i class="dropdown icon"></i>
-    </span>
-  </h1>
+<h1 class="ui header">
+  Agora é só escolher...
+  <span class="sub header">
+    <span class="bold">Melhores avaliados</span> primeiro
+    <i class="dropdown icon"></i>
+  </span>
+</h1>
 
-  <div class="wrapper">
-    <div class="row">
-      <div class="ui clever card" ng-repeat='teacher in teachers'>
-        <div class="content">
-          <div class="ui image">
-            <img src="{{teacher.img}}">
-          </div>
-          <div class="rating">
-              <i class="fitted yellow star icon"></i>
-              <i class="fitted yellow star icon"></i>
-              <i class="fitted yellow half empty star icon"></i>
-              <i class="fitted yellow empty star icon"></i>
-              <i class="fitted yellow empty star icon"></i>
-          </div>
-          <div class="pricing">
-            R$ {{teacher.valor}}
-          </div>
-          <div class="name">{{teacher.nome}}</div>
-          <div class="description">
-            {{teacher.desc}}
-          </div>
+<div class="wrapper">
+  <div class="row">
+    <div class="ui clever card" ng-repeat='teacher in teachers'>
+      <div class="content">
+        <div class="ui image">
+          <img src="{{teacher.img}}">
         </div>
-        <div class="more">Ver mais</div>
+        <div class="rating">
+            <i class="fitted yellow star icon"></i>
+            <i class="fitted yellow star icon"></i>
+            <i class="fitted yellow half empty star icon"></i>
+            <i class="fitted yellow empty star icon"></i>
+            <i class="fitted yellow empty star icon"></i>
+        </div>
+        <div class="pricing">
+          R$ {{teacher.valor}}
+        </div>
+        <div class="name">{{teacher.nome}}</div>
+        <div class="description">
+          {{teacher.desc}}
+        </div>
       </div>
+      <div class="more">Ver mais</div>
     </div>
   </div>
 </div>

@@ -1,31 +1,50 @@
+@import './variables.styl'
+
 /*******************************
       Formulário de Busca
 *******************************/
-.ui.form {
+#formScreen {
   padding: 0 20px;
   font-size: 14px;
+
+  font-family: 'Roboto', serif;
 
   /*--------------------
           Inputs
   ---------------------*/
   .field {
+    margin-top: 20px;
+
     & > label {
       font-weight: normal;
       margin: 0;
       color: #665;
-      margin-top: 20px;
     }
 
     &.slim input[type=text], input[type=text]:active{
       background-color: transparent;
+      display: block;
+      width: 100%;
 
       border: none;
       border-radius: 0;
       border-bottom: 1px solid #b7b7b7;
 
-      padding: 5px 1px;
+      padding: 10px 1px 8px 1px;
       font-size: 26px;
+
+      font-family: inherit;
+      font-weight: 400;
+
+      outline: none;
     }
+  }
+
+  div.ui.button {
+    width: 200px;
+    margin: 15px auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   /*--------------------
@@ -62,7 +81,7 @@
 /*******************************
             Slider
 *******************************/
-.ui.form {
+#formScreen {
   /*--------------------
       Linha de Base
   ---------------------*/
@@ -90,13 +109,15 @@
     top: -9px;
 
     border-radius: 2em;
+    outline: none;
+
     background-color: #4A4A4A;
     box-shadow: none;
 
     -webkit-transition: box-shadow 1s;
     transition: box-shadow 1s;
 
-    &.noUi-active {
+    &.noUi-active, &:focus {
       box-shadow: 0 0 15px 15px #C9C9C9;
     }
 
@@ -135,33 +156,17 @@
   }
 }
 
-/*******************************
-          Date Picker
-*******************************/
-table.date.picker {
-  margin: 10px auto;
-  border-collapse: separate;
-  border-spacing: 10px;
-  table-layout: fixed;
-
-  th {
-    font-weight: 100;
+@media(min-width: $laptop.breakpoint){
+  .clever.form {
+    position: relative;
   }
 
-  td:first-child {
-    background-color: transparent;
-    width: 10px;
-    font-weight: 100;
-  }
+  #formScreen {
+    position: fixed;
+    height: 100%; width: 350px;
 
-  td {
-    width: 50px; height: 50px;
-    border-radius: .3rem;
-    background-color: #DDDDDD;
-  }
-
-  td.selected {
-    background-color: #5C5C5C;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

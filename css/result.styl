@@ -1,7 +1,9 @@
-/*******************************
-            Geral
-*******************************/
+@import "./variables.styl"
+
 #resultScreen {
+
+  display: none;
+
   /*--------------------
           Headers
   ---------------------*/
@@ -30,25 +32,36 @@
     display: flex;
     orientation: horizontal;
     overflow-y: visible;
-    width: 100%;
 
     margin-top: 70px;
   }
 
   .wrapper {
     overflow-x: scroll;
+    width: 100%;
   }
 }
 
-/*******************************
-          Date Picker
-*******************************/
-table.result.date.picker {
-  tr:first-child, td:first-child {
-    display: none;
-  }
+@media(min-width: $laptop.breakpoint){
+  #resultScreen {
+    display: block;
+    margin-left: 360px;
 
-  td {
-    width: 30px; height: 30px;
+    h1.ui.header, span.sub.header,
+    .ui.labels, table.date.picker {
+      display: none;
+    }
+
+    .wrapper {
+      overflow: hidden;
+      margin: 0 auto;
+      padding-top: 40px;
+
+      .row {
+        flex-wrap: wrap;
+
+        margin-top: 0px;
+      }
+    }
   }
 }

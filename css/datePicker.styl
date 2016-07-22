@@ -1,0 +1,39 @@
+/*******************************
+          Date Picker
+*******************************/
+table.date.picker {
+  margin: 10px auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  table-layout: fixed;
+
+  th {
+    font-weight: 100;
+  }
+
+  td:first-child {
+    background-color: transparent;
+    width: 10px;
+    font-weight: 100;
+  }
+
+  td {
+    width: 50px; height: 50px;
+    border-radius: .3rem;
+    background-color: #DDDDDD;
+  }
+
+  td.selected {
+    background-color: #5C5C5C;
+  }
+}
+
+table.result.date.picker {
+  tr:first-child, td:first-child {
+    display: none;
+  }
+
+  td {
+    width: 30px; height: 30px;
+  }
+}

@@ -7,20 +7,22 @@
 				initial-scale=1.0,minimum-scale=1.0,
 				maximum-scale=1.0,user-scalable=no" />
 	<link rel="stylesheet" href="static/semantic.css">
+	<link rel="stylesheet" href="static/animate.css">
 	<link rel="stylesheet" href="static/nouislider.css">
 	<link rel="stylesheet" href="static/style.css">
 	<script src="main.js"></script>
 </head>
 <body>
-	<div id="header" class="ui fixed text menu">
+	<!-- <div id="header" class="ui fixed text menu">
 		<div class="item" style="margin: 0 auto;">
 			<div class="middle aligned content">
 				<img src="./static/logo.png" height="30px" alt="Logo">
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div ui-view ></div>
+	<div ui-view="form" id="formScreen" class="animated"></div>
+	<div ui-view="result" id="resultScreen" class="animated"></div>
 
 </body>
 </hmtl>

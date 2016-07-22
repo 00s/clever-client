@@ -2,7 +2,7 @@
   var exports = {};
 
   var Router = function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/search');
 
     $stateProvider
       .state('main', {
@@ -12,13 +12,16 @@
       })
       .state('search', {
         url: '/search',
-        templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
-      })
-      .state('result', {
-        url: '/result',
-        templateUrl: 'views/result.html',
-        controller: 'ResultCtrl'
+        views: {
+          form: {
+            templateUrl: 'views/search.html',
+            controller: 'SearchCtrl'
+          },
+          result: {
+            templateUrl: 'views/result.html',
+            controller: 'ResultCtrl'
+          }
+        }
       });
   };
 

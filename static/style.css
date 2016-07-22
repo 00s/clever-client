@@ -1,7 +1,9 @@
-@import 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i';
-.ui.form {
+@import 'https://fonts.googleapis.com/css?family=Merriweather:700,900';
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
+#formScreen {
   padding: 0 20px;
   font-size: 14px;
+  font-family: 'Roboto', serif;
 /*--------------------
           Inputs
   ---------------------*/
@@ -12,64 +14,79 @@
           Botoes
   ---------------------*/
 }
-.ui.form .field > label {
+#formScreen .field {
+  margin-top: 20px;
+}
+#formScreen .field > label {
   font-weight: normal;
   margin: 0;
   color: #665;
-  margin-top: 20px;
 }
-.ui.form .field.slim input[type=text],
-.ui.form .field input[type=text]:active {
+#formScreen .field.slim input[type=text],
+#formScreen .field input[type=text]:active {
   background-color: transparent;
+  display: block;
+  width: 100%;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #b7b7b7;
-  padding: 5px 1px;
+  padding: 10px 1px 8px 1px;
   font-size: 26px;
+  font-family: inherit;
+  font-weight: 400;
+  outline: none;
 }
-.ui.form .ui.statistics .statistic:first-child {
+#formScreen div.ui.button {
+  width: 200px;
+  margin: 15px auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+#formScreen .ui.statistics .statistic:first-child {
   margin-right: 0;
   margin-bottom: 0;
 }
-.ui.form .ui.statistics .statistic:last-child {
+#formScreen .ui.statistics .statistic:last-child {
   margin-left: 0;
   margin-bottom: 0;
 }
-.ui.form .ui.statistics .divider {
+#formScreen .ui.statistics .divider {
   height: 28px;
   margin: 0 10px;
   font-size: 1.5em;
   line-height: 34px;
 }
-.ui.form .ui.button {
+#formScreen .ui.button {
   margin-bottom: 20px;
 }
-.ui.form .noUi-horizontal {
+#formScreen .noUi-horizontal {
   height: 2px;
   margin-bottom: 50px;
   margin-top: 40px;
 }
-.ui.form .noUi-target {
+#formScreen .noUi-target {
   border-color: #4a4a4a;
 }
-.ui.form .noUi-base {
+#formScreen .noUi-base {
   top: -5px;
 }
-.ui.form .noUi-handle {
+#formScreen .noUi-handle {
   width: 30px;
   height: 30px;
   left: -17px;
   top: -9px;
   border-radius: 2em;
+  outline: none;
   background-color: #4a4a4a;
   box-shadow: none;
   -webkit-transition: box-shadow 1s;
   transition: box-shadow 1s;
 }
-.ui.form .noUi-handle.noUi-active {
+#formScreen .noUi-handle.noUi-active,
+#formScreen .noUi-handle:focus {
   box-shadow: 0 0 15px 15px #c9c9c9;
 }
-.ui.form .noUi-handle:before {
+#formScreen .noUi-handle:before {
   content: '';
   position: absolute;
   top: -40%;
@@ -78,47 +95,48 @@
   height: 50px;
   background-color: transparent;
 }
-.ui.form .noUi-handle:after {
+#formScreen .noUi-handle:after {
   display: none;
 }
-.ui.form .noUi-value {
+#formScreen .noUi-value {
   margin-top: 10px;
   position: absolute;
   text-align: center;
   color: #999;
 }
-.ui.form .noUi-value:last-child {
+#formScreen .noUi-value:last-child {
   left: 90% !important;
 }
-.ui.form .noUi-value:first-child {
+#formScreen .noUi-value:first-child {
   left: 10% !important;
 }
-table.date.picker {
-  margin: 10px auto;
-  border-collapse: separate;
-  border-spacing: 10px;
-  table-layout: fixed;
-}
-table.date.picker th {
-  font-weight: 100;
-}
-table.date.picker td:first-child {
-  background-color: transparent;
-  width: 10px;
-  font-weight: 100;
-}
-table.date.picker td {
-  width: 50px;
-  height: 50px;
-  border-radius: 0.3rem;
-  background-color: #ddd;
-}
-table.date.picker td.selected {
-  background-color: #5c5c5c;
+@media (min-width: 660px) {
+  .clever.form {
+    position: relative;
+  }
+  #formScreen {
+    position: fixed;
+    height: 100%;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .bold {
   font-weight: 900 !important;
   color: #000;
+}
+#resultScreen {
+  display: none;
+/*--------------------
+          Headers
+  ---------------------*/
+/*--------------------
+          Labels
+  ---------------------*/
+/*--------------------
+       Result List
+  ---------------------*/
 }
 #resultScreen h1.ui.header {
   padding: 0 20px;
@@ -135,22 +153,32 @@ table.date.picker td.selected {
   display: flex;
   orientation: horizontal;
   overflow-y: visible;
-  width: 100%;
   margin-top: 70px;
 }
 #resultScreen .wrapper {
   overflow-x: scroll;
+  width: 100%;
 }
-table.result.date.picker tr:first-child,
-table.result.date.picker td:first-child {
-  display: none;
-}
-table.result.date.picker td {
-  width: 30px;
-  height: 30px;
-}
-body {
-  padding-top: 55px !important;
+@media (min-width: 660px) {
+  #resultScreen {
+    display: block;
+    margin-left: 360px;
+  }
+  #resultScreen h1.ui.header,
+  #resultScreen span.sub.header,
+  #resultScreen .ui.labels,
+  #resultScreen table.date.picker {
+    display: none;
+  }
+  #resultScreen .wrapper {
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  #resultScreen .wrapper .row {
+    flex-wrap: wrap;
+    margin-top: 0px;
+  }
 }
 #header {
   background-color: #fff;
@@ -183,19 +211,56 @@ body {
   margin: 50px auto;
   width: 45%;
 }
+table.date.picker {
+  margin: 10px auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  table-layout: fixed;
+}
+table.date.picker th {
+  font-weight: 100;
+}
+table.date.picker td:first-child {
+  background-color: transparent;
+  width: 10px;
+  font-weight: 100;
+}
+table.date.picker td {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.3rem;
+  background-color: #ddd;
+}
+table.date.picker td.selected {
+  background-color: #5c5c5c;
+}
+table.result.date.picker tr:first-child,
+table.result.date.picker td:first-child {
+  display: none;
+}
+table.result.date.picker td {
+  width: 30px;
+  height: 30px;
+}
 .ui.clever.card {
   height: 328px;
   min-width: 300px;
   max-width: 300px;
   margin: 15px 15px;
   padding-left: 20px;
+  padding-right: 20px;
   border-radius: 8px;
-  box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.5);
-  font-family: 'Merriweather Sans', sans-serif;
+  border: 2px solid #ececec;
+  box-shadow: none;
+  font-family: 'Merriweather', serif;
   color: #6f6f6f;
+}
+.ui.clever.card:hover {
+  box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.5);
 }
 .ui.clever.card .content {
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 .ui.clever.card .ui.image {
   margin-top: -65px;
@@ -207,35 +272,54 @@ body {
   border: 3px solid #fff;
 }
 .ui.clever.card .name {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-family: inherit;
-  font-size: 18px;
+  margin-top: 23px;
+  margin-bottom: 24px;
+  font-family: 'Merriweather', serif;
+  font-size: 22px;
   font-weight: bold;
+  line-height: 30px;
 }
 .ui.clever.card .rating {
   position: absolute;
+  width: 100%;
   top: -40px;
-  right: 40px;
+  padding-left: 126px;
+  padding-right: 20px;
+  text-align: center;
 }
 .ui.clever.card .pricing {
   position: absolute;
   top: 20px;
-  right: 40px;
+  width: 100%;
+  padding-left: 126px;
+  padding-right: 20px;
+  text-align: center;
   font-size: 16px;
+  font-weight: bold;
 }
 .ui.clever.card .description {
-  font-size: 16px;
-  font-weight: 100;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0px;
 }
 .ui.clever.card .more {
+  cursor: pointer;
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0px;
+  height: 50px;
+  line-height: 50px;
+  margin-left: -20px;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #ececec;
+  font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+}
+@media (min-width: 660px) {
+  .ui.clever.card {
+    margin-top: 70px;
+  }
 }
