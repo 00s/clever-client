@@ -7,7 +7,7 @@
   padding: 0 20px;
   font-size: 14px;
 
-  font-family: 'Roboto', serif;
+  font-family: 'Merriweather Sans', sans-serif;
 
   /*--------------------
           Inputs
@@ -16,9 +16,10 @@
     margin-top: 20px;
 
     & > label {
-      font-weight: normal;
+      font-weight: 300;
+      font-size: 13.65px;
       margin: 0;
-      color: #665;
+      color: #5C5C5C;
     }
 
     &.slim input[type=text], input[type=text]:active{
@@ -30,11 +31,11 @@
       border-radius: 0;
       border-bottom: 1px solid #b7b7b7;
 
-      padding: 10px 1px 8px 1px;
+      padding: 9px 1px;
       font-size: 26px;
 
       font-family: inherit;
-      font-weight: 400;
+      font-weight: 300;
 
       outline: none;
     }
@@ -88,7 +89,7 @@
   .noUi-horizontal {
     height: 2px;
     margin-bottom: 50px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .noUi-target {
@@ -115,10 +116,11 @@
     box-shadow: none;
 
     -webkit-transition: box-shadow 1s;
+    -moz-transition: box-shadow 1s;
     transition: box-shadow 1s;
 
     &.noUi-active, &:focus {
-      box-shadow: 0 0 15px 15px #C9C9C9;
+      box-shadow: 0 0 15px 7px #C5C5C5;
     }
 
     &:before {
@@ -159,11 +161,15 @@
 @media(min-width: $laptop.breakpoint){
   .clever.form {
     position: relative;
+    margin-top: 43px;
   }
 
   #formScreen {
     position: fixed;
     height: 100%; width: 350px;
+
+    padding-left: 42px;
+    padding-right: 0px;
 
     margin-left: auto;
     margin-right: auto;

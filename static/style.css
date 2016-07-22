@@ -1,9 +1,10 @@
+@import 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700';
 @import 'https://fonts.googleapis.com/css?family=Merriweather:700,900';
 @import 'https://fonts.googleapis.com/css?family=Roboto:400,500';
 #formScreen {
   padding: 0 20px;
   font-size: 14px;
-  font-family: 'Roboto', serif;
+  font-family: 'Merriweather Sans', sans-serif;
 /*--------------------
           Inputs
   ---------------------*/
@@ -18,9 +19,10 @@
   margin-top: 20px;
 }
 #formScreen .field > label {
-  font-weight: normal;
+  font-weight: 300;
+  font-size: 13.65px;
   margin: 0;
-  color: #665;
+  color: #5c5c5c;
 }
 #formScreen .field.slim input[type=text],
 #formScreen .field input[type=text]:active {
@@ -30,10 +32,10 @@
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #b7b7b7;
-  padding: 10px 1px 8px 1px;
+  padding: 9px 1px;
   font-size: 26px;
   font-family: inherit;
-  font-weight: 400;
+  font-weight: 300;
   outline: none;
 }
 #formScreen div.ui.button {
@@ -62,7 +64,7 @@
 #formScreen .noUi-horizontal {
   height: 2px;
   margin-bottom: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 #formScreen .noUi-target {
   border-color: #4a4a4a;
@@ -80,11 +82,12 @@
   background-color: #4a4a4a;
   box-shadow: none;
   -webkit-transition: box-shadow 1s;
+  -moz-transition: box-shadow 1s;
   transition: box-shadow 1s;
 }
 #formScreen .noUi-handle.noUi-active,
 #formScreen .noUi-handle:focus {
-  box-shadow: 0 0 15px 15px #c9c9c9;
+  box-shadow: 0 0 15px 7px #c5c5c5;
 }
 #formScreen .noUi-handle:before {
   content: '';
@@ -113,11 +116,14 @@
 @media (min-width: 660px) {
   .clever.form {
     position: relative;
+    margin-top: 43px;
   }
   #formScreen {
     position: fixed;
     height: 100%;
     width: 350px;
+    padding-left: 42px;
+    padding-right: 0px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -174,6 +180,7 @@
     overflow: hidden;
     margin: 0 auto;
     padding-top: 40px;
+    margin-left: 35px;
   }
   #resultScreen .wrapper .row {
     flex-wrap: wrap;
@@ -212,7 +219,7 @@ body {
   width: 45%;
 }
 table.date.picker {
-  margin: 10px auto;
+  margin: 0;
   border-collapse: separate;
   border-spacing: 10px;
   table-layout: fixed;
@@ -226,13 +233,16 @@ table.date.picker td:first-child {
   font-weight: 100;
 }
 table.date.picker td {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 0.3rem;
   background-color: #ddd;
 }
 table.date.picker td.selected {
   background-color: #5c5c5c;
+}
+table.result.date.picker {
+  margin: 0 auto;
 }
 table.result.date.picker tr:first-child,
 table.result.date.picker td:first-child {
