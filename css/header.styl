@@ -3,10 +3,39 @@
 #header {
   background-color: $header.color;
   border-bottom: 1px solid #cbcbcc;
-  width: 100%; min-height: $header.height;
-  background: #fff;
+  width: 100%; height: $header.height;
+  top: 0;
+  position: fixed;
+  z-index: 101;
 
-  & .text.menu {
-    margin: 0 auto;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  img {
+    height: 17px;
+    margin-left: 44px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #dashboardCTA {
+    height: 100%; width: 150px;
+    display: inline-block;
+    background-color: #F1F1F1;
+    opacity: .55;
+    float: right;
+
+    line-height: $header.height;
+
+    text-align: center;
+
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }

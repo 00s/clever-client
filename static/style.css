@@ -116,7 +116,7 @@
 @media (min-width: 660px) {
   .clever.form {
     position: relative;
-    margin-top: 43px;
+    margin-top: 23px;
   }
   #formScreen {
     position: fixed;
@@ -179,7 +179,7 @@
   #resultScreen .wrapper {
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 20px;
     margin-left: 35px;
   }
   #resultScreen .wrapper .row {
@@ -188,18 +188,44 @@
   }
 }
 #header {
-  background-color: #fff;
+  background-color: #60abcd;
   border-bottom: 1px solid #cbcbcc;
   width: 100%;
-  min-height: 56px;
-  background: #fff;
+  height: 50px;
+  top: 0;
+  position: fixed;
+  z-index: 101;
 }
-#header .text.menu {
-  margin: 0 auto;
+#header:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+#header img {
+  height: 17px;
+  margin-left: 44px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#header #dashboardCTA {
+  height: 100%;
+  width: 150px;
+  display: inline-block;
+  background-color: #f1f1f1;
+  opacity: 0.55;
+  float: right;
+  line-height: 50px;
+  text-align: center;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 body {
   margin: 0;
   background: #fff;
+  padding-top: 50px;
 }
 .ui.centered.image {
   display: block;
@@ -236,10 +262,10 @@ table.date.picker td {
   width: 46px;
   height: 46px;
   border-radius: 0.3rem;
-  background-color: #ddd;
+  background-color: #e4e4e4;
 }
 table.date.picker td.selected {
-  background-color: #5c5c5c;
+  background-color: #60abcd;
 }
 table.result.date.picker {
   margin: 0 auto;
@@ -282,24 +308,24 @@ table.result.date.picker td {
   border: 3px solid #fff;
 }
 .ui.clever.card .name {
-  margin-top: 23px;
-  margin-bottom: 24px;
-  font-family: 'Merriweather', serif;
-  font-size: 22px;
-  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
   line-height: 30px;
 }
 .ui.clever.card .rating {
   position: absolute;
   width: 100%;
-  top: -40px;
+  top: -35px;
   padding-left: 126px;
   padding-right: 20px;
   text-align: center;
 }
 .ui.clever.card .pricing {
   position: absolute;
-  top: 20px;
+  top: 15px;
   width: 100%;
   padding-left: 126px;
   padding-right: 20px;
@@ -313,20 +339,39 @@ table.result.date.picker td {
   line-height: 20px;
   letter-spacing: 0px;
 }
-.ui.clever.card .more {
-  cursor: pointer;
+.ui.clever.card .options {
   position: absolute;
   bottom: 0px;
   height: 50px;
   line-height: 50px;
   margin-left: -20px;
+  display: flex;
   width: 100%;
-  text-align: center;
   border-top: 2px solid #ececec;
+}
+.ui.clever.card .options .favorite {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  border-right: 2px solid #ececec;
+  border-bottom-left-radius: 8px;
+}
+.ui.clever.card .options .more {
+  cursor: pointer;
+  flex-grow: 1;
+  display: inline-block;
+  border-bottom-right-radius: 8px;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
+}
+.ui.clever.card .options .more:hover,
+.ui.clever.card .options .favorite:hover {
+  background-color: #60abcd;
+  color: #fff;
 }
 @media (min-width: 660px) {
   .ui.clever.card {
