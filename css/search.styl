@@ -6,6 +6,8 @@
 #formScreen {
   padding: 0 20px;
   font-size: 14px;
+  background-color: white;
+  // display: none;
 
   font-family: 'Merriweather Sans', sans-serif;
 
@@ -161,18 +163,18 @@
 @media(min-width: $laptop.breakpoint){
   .clever.form {
     position: relative;
-    margin-top: 23px;
   }
 
   #formScreen {
-    position: fixed;
-    height: 100%; width: 350px;
+    position: absolute;
+    max-width: $searchForm.max-width;
+    top: 0;
+    min-height: $searchForm.min-height;
+    height 100%;
 
-    padding-left: 42px;
-    padding-right: 0px;
+    padding: $searchForm.padding;
+    overflow-y: scroll
 
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
