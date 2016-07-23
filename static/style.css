@@ -4,6 +4,7 @@
 #formScreen {
   padding: 0 20px;
   font-size: 14px;
+  background-color: #fff;
   font-family: 'Merriweather Sans', sans-serif;
 /*--------------------
           Inputs
@@ -116,16 +117,15 @@
 @media (min-width: 660px) {
   .clever.form {
     position: relative;
-    margin-top: 23px;
   }
   #formScreen {
-    position: fixed;
+    position: absolute;
+    max-width: 360px;
+    top: 0;
+    min-height: 675px;
     height: 100%;
-    width: 350px;
-    padding-left: 42px;
-    padding-right: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 30px;
+    overflow-y: scroll;
   }
 }
 .bold {
@@ -187,34 +187,31 @@
     margin-top: 0px;
   }
 }
-#header {
-  background-color: #60abcd;
-  border-bottom: 1px solid #cbcbcc;
+#navbar {
   width: 100%;
   height: 50px;
   top: 0;
   position: fixed;
   z-index: 101;
 }
-#header:before {
+#navbar:before {
   content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-#header img {
+#navbar img {
   height: 17px;
   margin-left: 44px;
   display: inline-block;
   vertical-align: middle;
 }
-#header #dashboardCTA {
+#navbar #dashboardCTA {
   height: 100%;
   width: 150px;
   display: inline-block;
-  background-color: #f1f1f1;
-  opacity: 0.55;
   float: right;
+  color: #fff;
   line-height: 50px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
@@ -266,6 +263,22 @@ table.date.picker td {
 }
 table.date.picker td.selected {
   background-color: #60abcd;
+}
+table.date.picker .pickable {
+  -o-transition: background 1s ease-out;
+  -ms-transition: background 1s ease-out;
+  -moz-transition: background 1s ease-out;
+  -webkit-transition: background 1s ease-out;
+  transition: background 1s ease-out;
+  cursor: pointer;
+}
+table.date.picker .pickable:hover {
+  background: #60abcd;
+  -o-transition: background 0.2s ease-in;
+  -ms-transition: background 0.2s ease-in;
+  -moz-transition: background 0.2s ease-in;
+  -webkit-transition: background 0.2s ease-in;
+  transition: background 0.2s ease-in;
 }
 table.result.date.picker {
   margin: 0 auto;
@@ -377,4 +390,29 @@ table.result.date.picker td {
   .ui.clever.card {
     margin-top: 70px;
   }
+}
+.background {
+  background-image: url("img/clvr-background-min.png");
+  background-size: cover;
+  background-position: center;
+}
+#header {
+  color: #fff;
+  margin-left: 510px;
+  margin-top: 50vh;
+}
+#header h1 {
+  font-family: 'Merriweather';
+  font-size: 60px;
+  font-weight: 600;
+  text-shadow: 0 0 20px #545454;
+}
+#header .subheading {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 30px;
+  line-height: 1.3em;
+  font-weight: 300;
+  margin-right: 30px;
+  max-width: 500px;
+  text-shadow: 0 0 20px #545454;
 }
