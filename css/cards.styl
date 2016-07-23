@@ -3,10 +3,14 @@
 /*******************************
             Cards
 *******************************/
+.ui.expanded.clever.card {
+  height: $card.height * 2 !important;
+}
+
 .ui.clever.card {
   height: $card.height;
-  min-width: $card.width;
-  max-width: $card.width;
+  min-width: 300px;
+  width: $card.width;
 
   margin: 15px 15px;
   padding-left: $card.padding;
@@ -128,5 +132,10 @@
 @media(min-width: $laptop.breakpoint){
   .ui.clever.card {
     margin-top: 70px;
+    align-self: flex-start;
+  }
+
+  .ui.expanded.clever.card {
+    height: $card.width * 2 !important;
   }
 }

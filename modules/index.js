@@ -87,6 +87,18 @@
         valor: 30
       }
     ];
+
+    var cardWidth = 300, cardPadding = 20;
+    var cardSize = cardWidth + cardPadding * 2;
+
+    $(document).ready(function () {
+      var $row = $('.row').first();
+      cardCount = Math.floor($row.width() / cardSize);
+
+      $('.ui.clever.card').click(function () {
+        $(this).toggleClass('expanded');
+      });
+    });
   }
 
   exports.ResultCtrl = ['$scope', ResultCtrl];
