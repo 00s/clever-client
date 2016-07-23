@@ -95,8 +95,17 @@
       var $row = $('.row').first();
       cardCount = Math.floor($row.width() / cardSize);
 
-      $('.ui.clever.card').click(function () {
-        $(this).toggleClass('expanded');
+      $('.ui.clever.card .more').click(function () {
+        $this = $(this);
+        $card = $this.closest('.card');
+
+        if($card.hasClass('expanded')){
+          $card.removeClass('expanded');
+          $this.html('Ver mais');
+        } else {
+          $card.addClass('expanded');
+          $this.html('Ver menos');
+        }
       });
     });
   }

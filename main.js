@@ -46721,34 +46721,6 @@ return jQuery;
         desc: 'Método de ensino inovador! Palmatórias de última geração! Mande inbox.',
         img: 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/12888627_817544588352023_5616328719886418799_o.jpg',
         valor: 30
-      },
-      {
-        nome: 'Pedro Arthur',
-        materia: 'Física',
-        desc: 'Método de ensino inovador! Palmatórias de última geração! Mande inbox.',
-        img: 'https://scontent-gru2-1.xx.fbcdn.net/t31.0-8/13246344_1004346659679696_1484908967915763442_o.jpg',
-        valor: 50
-      },
-      {
-        nome: 'Adolfo Mello',
-        materia: 'Física',
-        desc: 'Método de ensino inovador! Palmatórias de última geração! Mande inbox.',
-        img: 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/12888627_817544588352023_5616328719886418799_o.jpg',
-        valor: 30
-      },
-      {
-        nome: 'Pedro Arthur',
-        materia: 'Física',
-        desc: 'Método de ensino inovador! Palmatórias de última geração! Mande inbox.',
-        img: 'https://scontent-gru2-1.xx.fbcdn.net/t31.0-8/13246344_1004346659679696_1484908967915763442_o.jpg',
-        valor: 50
-      },
-      {
-        nome: 'Adolfo Mello',
-        materia: 'Física',
-        desc: 'Método de ensino inovador! Palmatórias de última geração! Mande inbox.',
-        img: 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/12888627_817544588352023_5616328719886418799_o.jpg',
-        valor: 30
       }
     ];
 
@@ -46759,23 +46731,17 @@ return jQuery;
       var $row = $('.row').first();
       cardCount = Math.floor($row.width() / cardSize);
 
-      $('.ui.clever.card').click(function () {
-        $(this).toggleClass('expanded');
-        // var $this = $(this);
-        //
-        // if($this.hasClass('expanded')){
-        //   $this.removeClass('expanded');
-        //   $this.css('order', $this.data('order'));
-        // } else {
-        //   var cardOrder = $this.css('order');
-        //   var rowCount = Math.floor(cardOrder / cardCount);
-        //
-        //
-        //   $this.css('order', rowCount - 1);
-        //   $this.addClass('expanded');
-        //
-        //   console.log(rowCount);
-        // }
+      $('.ui.clever.card .more').click(function () {
+        $this = $(this);
+        $card = $this.closest('.card');
+
+        if($card.hasClass('expanded')){
+          $card.removeClass('expanded');
+          $this.html('Ver mais');
+        } else {
+          $card.addClass('expanded');
+          $this.html('Ver menos');
+        }
       });
     });
   }

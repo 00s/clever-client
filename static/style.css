@@ -285,7 +285,64 @@ table.result.date.picker td {
   height: 30px;
 }
 .ui.expanded.clever.card {
-  height: 656px !important;
+  height: auto;
+}
+.ui.expanded.clever.card .contact {
+  display: block;
+  height: 40px;
+  width: 240px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #6f6f6f;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.ui.expanded.clever.card table.date.picker {
+  display: block !important;
+  margin-top: 20px;
+}
+.ui.expanded.clever.card table.date.picker tbody {
+  margin: 0 auto;
+  display: table;
+}
+.ui.expanded.clever.card .commentaries {
+  display: block;
+  width: 100%;
+  border-top: 2px solid #ececec;
+  margin: 20px auto 120px auto;
+  padding-top: 20px;
+}
+.ui.expanded.clever.card .commentaries h4 {
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #ffba00;
+  text-transform: uppercase;
+  text-align: center;
+}
+.ui.expanded.clever.card .comment {
+  margin-bottom: 23px;
+}
+.ui.expanded.clever.card .info {
+  display: inline-block;
+}
+.ui.expanded.clever.card .info:before {
+  height: 100%;
+  vertical-align: middle;
+}
+.ui.expanded.clever.card .info h5 {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: -5px;
+}
+.ui.expanded.clever.card .info .fitted.yellow.empty.star.icon {
+  width: 10px;
+  height: 10px;
+  margin-bottom: 5px;
 }
 .ui.clever.card {
   height: 328px;
@@ -299,6 +356,10 @@ table.result.date.picker td {
   box-shadow: none;
   font-family: 'Merriweather', serif;
   color: #6f6f6f;
+}
+.ui.clever.card .contact,
+.ui.clever.card .commentaries {
+  display: none;
 }
 .ui.clever.card:hover {
   box-shadow: 0px 2px 20px 0px rgba(192,192,192,0.5);
@@ -386,8 +447,5 @@ table.result.date.picker td {
   .ui.clever.card {
     margin-top: 70px;
     align-self: flex-start;
-  }
-  .ui.expanded.clever.card {
-    height: 600px !important;
   }
 }
