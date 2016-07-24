@@ -394,6 +394,7 @@ table.result.date.picker td {
   background-image: url("img/clvr-background-min.png");
   background-size: cover;
   background-position: center;
+  background-color: #212121;
 }
 #header {
   color: #fff;
