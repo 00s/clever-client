@@ -10,33 +10,22 @@
 	<link rel="stylesheet" href="static/animate.css">
 	<link rel="stylesheet" href="static/nouislider.css">
 	<link rel="stylesheet" href="static/style.css">
-	<script src="main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300" rel="stylesheet">
+	<script src="main.js"></script>
+	<script src="modules/index.js"></script>
 </head>
-<body class="background">
-	<div id="navbar">
-		<img src="./static/logo.svg" alt="Logo">
-		<a href="#" title="Entre com o facebook">
-			<span id="dashboardCTA">
-			 <i class="big facebook icon"></i>
-			 Login
-			</span>
-		</a>
-	</div>
+<body>
 
-	<div ui-view="form" id="formScreen" class="animated"></div>
+	
+	<div ui-view="form" id="formScreen" class="animated container"></div>
 
-	<div id="content">
-		<header id="header" class="">
-			<h1>Clever</h1>
-			<div class="subheading">
-				O jeito mais simples de encontrar o seu professor particular.
-			</div>
-		</header>
+	<div id="main-content" class="background">
+		
+		<div ui-view="navbar" id="navbar"></div>
+
+		<div ui-view="home" id="landing"></div>
+		<!--<div ui-view="result" id="resultScreen" class="animated"></div> -->
 	</div>
-	<!-- 
-	 <div ui-view="result" id="resultScreen" class="animated"></div> 
-	-->
 
 </body>
 </hmtl>

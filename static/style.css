@@ -119,11 +119,11 @@
     position: relative;
   }
   #formScreen {
-    position: absolute;
+    float: left;
     max-width: 360px;
-    top: 0;
-    min-height: 675px;
-    height: 100%;
+    width: 360px;
+    display: block;
+    height: 100vh;
     padding: 30px;
     overflow-y: scroll;
   }
@@ -188,8 +188,8 @@
   }
 }
 #navbar {
-  width: 100%;
-  height: 50px;
+  width: calc(100vw - 360px);
+  height: 70px;
   top: 0;
   position: fixed;
   z-index: 101;
@@ -212,7 +212,7 @@
   display: inline-block;
   float: right;
   color: #fff;
-  line-height: 50px;
+  line-height: 70px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 13px;
@@ -222,7 +222,6 @@
 body {
   margin: 0;
   background: #fff;
-  padding-top: 50px;
 }
 .ui.centered.image {
   display: block;
@@ -398,8 +397,9 @@ table.result.date.picker td {
 }
 #header {
   color: #fff;
-  margin-left: 510px;
-  margin-top: 50vh;
+  padding-left: 150px;
+  padding-top: 50vh;
+  height: 100vh;
 }
 #header h1 {
   font-family: 'Merriweather';
@@ -415,4 +415,9 @@ table.result.date.picker td {
   margin-right: 30px;
   max-width: 500px;
   text-shadow: 0 0 20px #545454;
+}
+#main-content {
+  float: left;
+  width: calc(100vw - 360px);
+  height: 100vh;
 }

@@ -1,9 +1,7 @@
 @import './variables.styl'
 
 #navbar {
-  // background-color: $navbar.color;
-  // border-bottom: 1px solid #cbcbcc;
-  width: 100%; 
+  width: "calc(100vw - %s)" %  $searchForm.max-width;
   height: $navbar.height;
   top: 0;
   position: fixed;
