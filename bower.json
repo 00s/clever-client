@@ -12,6 +12,7 @@
     "angular": "~1.5.7",
     "angular-easyfb": "~1.5.1",
     "angular-ui-router": "~0.3.1",
-    "jquery": "~3.0.0"
+    "jquery": "~3.0.0",
+    "jQuery": "^3.1.0"
   }
 }
