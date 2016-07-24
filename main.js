@@ -56654,9 +56654,15 @@ return jQuery;
 (function () {
   var exports = {};
 
-  /*
+  var TeacherCardDirective = function () {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: 'views/directives/teacherCard.html'
+    };
+  };
 
-  */
+  exports.TeacherCardDirective = TeacherCardDirective;
 
   var SliderDirective = function () {
     return {
@@ -56711,9 +56717,6 @@ return jQuery;
 
   exports.SliderDirective = SliderDirective;
 
-  /*
-
-  */
 
   var DatePicker = function () {
     return {
@@ -56756,7 +56759,8 @@ return jQuery;
   angular
     .module('clever.directives', [])
     .directive('cleverSlider', exports.SliderDirective)
-    .directive('cleverDatePicker', exports.DatePickerDirective);
+    .directive('cleverDatePicker', exports.DatePickerDirective)
+    .directive('teacherCard', exports.TeacherCardDirective);
 })();
 
 'use strict';

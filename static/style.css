@@ -205,18 +205,26 @@
   display: inline-block;
   vertical-align: middle;
 }
+#navbar i.facebook.icon {
+  opacity: 1;
+}
 #navbar #dashboardCTA {
   height: 100%;
   width: 150px;
   display: inline-block;
+  background-color: transparent;
+  color: #fff;
+  opacity: 1;
   float: right;
   color: #fff;
   line-height: 70px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 13px;
-  text-transform: uppercase;
   font-weight: bold;
+}
+#navbar #dashboardCTA:hover {
+  background-color: #283d7b;
 }
 body {
   margin: 0;
