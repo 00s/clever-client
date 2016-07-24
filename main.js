@@ -56839,6 +56839,27 @@ return jQuery;
         valor: 30
       }
     ];
+
+    var cardWidth = 300, cardPadding = 20;
+    var cardSize = cardWidth + cardPadding * 2;
+
+    $(document).ready(function () {
+      var $row = $('.row').first();
+      cardCount = Math.floor($row.width() / cardSize);
+
+      $('.ui.clever.card .more').click(function () {
+        $this = $(this);
+        $card = $this.closest('.card');
+
+        if($card.hasClass('expanded')){
+          $card.removeClass('expanded');
+          $this.html('Ver mais');
+        } else {
+          $card.addClass('expanded');
+          $this.html('Ver menos');
+        }
+      });
+    });
   }
 
   exports.ResultCtrl = ['$scope', ResultCtrl];

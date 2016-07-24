@@ -22,9 +22,16 @@
     vertical-align: middle;
   }
 
+  i.facebook.icon {
+    opacity: 1;
+  }
+
   #dashboardCTA {
     height: 100%; width: 150px;
     display: inline-block;
+    background-color: transparent;
+    color: white;
+    opacity: 1;
     float: right;
     color: white;
 
@@ -34,7 +41,10 @@
 
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 13px;
-    text-transform: uppercase;
     font-weight: bold;
+
+    &:hover {
+      background-color: #283D7B;
+    }
   }
 }
