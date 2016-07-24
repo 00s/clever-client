@@ -125,7 +125,6 @@
     display: block;
     height: 100vh;
     padding: 30px;
-    overflow-y: scroll;
   }
 }
 .bold {
@@ -168,7 +167,6 @@
 @media (min-width: 660px) {
   #resultScreen {
     display: block;
-    margin-left: 360px;
   }
   #resultScreen h1.ui.header,
   #resultScreen span.sub.header,
@@ -189,6 +187,7 @@
 }
 #navbar {
   width: calc(100vw - 360px);
+  margin-left: 360px;
   height: 70px;
   top: 0;
   position: fixed;
@@ -417,7 +416,7 @@ table.result.date.picker td {
   max-width: 500px;
   text-shadow: 0 0 20px #545454;
 }
-#main-content {
+[ui-view="main"] {
   float: left;
   width: calc(100vw - 360px);
   height: 100vh;

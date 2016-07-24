@@ -1,5 +1,7 @@
-#main-content{
-    float: left;
-    width: "calc(100vw - %s)" %  $searchForm.max-width;
-    height: 100vh;
+@import "./variables"
+
+[ui-view="main"]{
+  float: left;
+  width: "calc(100vw - %s)" %  $searchForm.max-width;
+  height: 100vh;
 }

@@ -16,16 +16,9 @@
 </head>
 <body>
 
-	
+	<div ui-view="navbar" id="navbar"></div>
 	<div ui-view="form" id="formScreen" class="animated container"></div>
-
-	<div id="main-content" class="background">
-		
-		<div ui-view="navbar" id="navbar"></div>
-
-		<div ui-view="home" id="landing"></div>
-		<!--<div ui-view="result" id="resultScreen" class="animated"></div> -->
-	</div>
+	<div ui-view="main" id="landing"></div>
 
 </body>
 </hmtl>

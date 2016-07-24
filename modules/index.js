@@ -18,7 +18,7 @@
 
   exports.UserCtrl = ['$scope', 'LoginFactory', UserCtrl];
 
-  var SearchCtrl = function ($scope) {
+  var SearchCtrl = function ($scope, $state) {
     $scope.lowerPrice = 50;
     $scope.upperPrice = 90;
 
@@ -29,22 +29,13 @@
     };
 
     $scope.buscar = function () {
-      var $form = $('#formScreen');
-      var $result = $('#resultScreen');
-
-      console.log($result.css('display'));
-
-      if($result.css('display') == 'none'){
-        $form.addClass('slideOutLeft');
-        $form.css('display', 'none');
-
-        $result.css('display', 'block');
-        $result.addClass('slideInRight');
+      if($state.current.name == "home"){
+        $state.go('search');
       }
     };
   };
 
-  exports.SearchCtrl = ["$scope", SearchCtrl];
+  exports.SearchCtrl = ["$scope", "$state", SearchCtrl];
 
   /*
 

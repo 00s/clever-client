@@ -56607,26 +56607,37 @@ return jQuery;
   var exports = {};
 
   var Router = function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
-      .state('search', {
-        url: '/',
+      .state('home', {
+        url: '/home',
         views: {
+          navbar: {
+            templateUrl: 'views/navbar.html'
+          },
           form: {
             templateUrl: 'views/search.html',
             controller: 'SearchCtrl'
           },
-          result: {
+          main: {
+            templateUrl: 'views/landing.html'
+          }
+        }
+      })
+      .state('search', {
+        url: '/search',
+        views: {
+          navbar: {
+            templateUrl: 'views/navbar.html'
+          },
+          form: {
+            templateUrl: 'views/search.html',
+            controller: 'SearchCtrl'
+          },
+          main: {
             templateUrl: 'views/result.html',
             controller: 'ResultCtrl'
-          },
-          home: {
-            templateUrl: 'views/landing.html'
-          },
-          navbar: {
-            templateUrl: 'views/navbar.html',
-            controller: 'UserCtrl'
           }
         }
       });
@@ -56768,7 +56779,7 @@ return jQuery;
 
   exports.UserCtrl = ['$scope', 'LoginFactory', UserCtrl];
 
-  var SearchCtrl = function ($scope) {
+  var SearchCtrl = function ($scope, $state) {
     $scope.lowerPrice = 50;
     $scope.upperPrice = 90;
 
@@ -56779,22 +56790,13 @@ return jQuery;
     };
 
     $scope.buscar = function () {
-      var $form = $('#formScreen');
-      var $result = $('#resultScreen');
-
-      console.log($result.css('display'));
-
-      if($result.css('display') == 'none'){
-        $form.addClass('slideOutLeft');
-        $form.css('display', 'none');
-
-        $result.css('display', 'block');
-        $result.addClass('slideInRight');
+      if($state.current.name == "home"){
+        $state.go('search');
       }
     };
   };
 
-  exports.SearchCtrl = ["$scope", SearchCtrl];
+  exports.SearchCtrl = ["$scope", "$state", SearchCtrl];
 
   /*
 
