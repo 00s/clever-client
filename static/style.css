@@ -176,7 +176,7 @@
   }
   #resultScreen .wrapper {
     overflow: hidden;
-    margin: 0 auto;
+    margin: 40px auto 20px;
     padding-top: 20px;
     margin-left: 35px;
   }
@@ -188,10 +188,10 @@
 #navbar {
   width: calc(100vw - 360px);
   margin-left: 360px;
-  height: 70px;
+  height: 50px;
   top: 0;
   position: fixed;
-  z-index: 101;
+  z-index: 1;
 }
 #navbar:before {
   content: "";
@@ -201,23 +201,26 @@
 }
 #navbar img {
   height: 17px;
-  margin-left: 44px;
+  margin-left: 30px;
   display: inline-block;
   vertical-align: middle;
+  -webkit-filter: drop-shadow(0px 0px 1px #343434);
+  filter: drop-shadow(0px 0px 1px #343434);
 }
 #navbar i.facebook.icon {
   opacity: 1;
 }
 #navbar #dashboardCTA {
   height: 100%;
-  width: 150px;
+  width: 240px;
   display: inline-block;
   background-color: transparent;
   color: #fff;
   opacity: 1;
   float: right;
   color: #fff;
-  line-height: 70px;
+  text-shadow: 0 0 1px #000;
+  line-height: 50px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 13px;
@@ -486,7 +489,7 @@ table.result.date.picker td {
   line-height: 1.3em;
   font-weight: 300;
   margin-right: 30px;
-  max-width: 500px;
+  max-width: 430px;
   text-shadow: 0 0 20px #545454;
 }
 [ui-view="main"] {
