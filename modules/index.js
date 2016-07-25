@@ -11,9 +11,17 @@
       LoginFactory
         .login()
         .then(function (res) {
-          console.log(res);
+          $scope.logado = true;
         });
+
+      $scope.logado = false;
     };
+
+    $scope.init = function() {
+      $scope.logado = LoginFactory.isLoggedIn();
+    };
+
+    $scope.init();
   };
 
   exports.UserCtrl = ['$scope', 'LoginFactory', UserCtrl];

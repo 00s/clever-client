@@ -1,7 +1,11 @@
 <img src="./static/logo.svg" alt="Logo">
 <a href="#" title="Entre com o facebook">
-    <span id="dashboardCTA">
+    <span id="dashboardCTA" ng-click="loginorcreate()" ng-if="!logado">
      <i class="big facebook icon"></i>
      Login
+    </span>
+
+    <span id="dashboardCTA" style="cursor: default;" ng-if="logado">
+     Olá!
     </span>
 </a>

@@ -9,7 +9,8 @@
         url: '/home',
         views: {
           navbar: {
-            templateUrl: 'views/navbar.html'
+            templateUrl: 'views/navbar.html',
+            controller: 'UserCtrl'
           },
           form: {
             templateUrl: 'views/search.html',
@@ -24,7 +25,8 @@
         url: '/search?price_start&price_end&discipline&location&schedules',
         views: {
           navbar: {
-            templateUrl: 'views/navbar.html'
+            templateUrl: 'views/navbar.html',
+            controller: 'UserCtrl'
           },
           form: {
             templateUrl: 'views/search.html',

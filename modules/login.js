@@ -47,14 +47,17 @@
         Atualiza o token expirado do Clever
     */
     factory.clever.refresh = function () {
-      var url = "http://localhost:8000/v1/refreshtoken";
+      var url = "http://cleverest.herokuapp.com/v1/refreshtoken";
 
       var refreshToken = localStorage.getItem('refreshToken');
       return $http
         .post(url)
         .then(function (res) {
+          var timeNow = Date.now().getMilliseconds();
+
           localStorage.setItem('accessToken', res.data.access_token);
           localStorage.setItem('refreshToken', res.data.refresh_token);
+          localStorage.setItem('expireTime', timeNow + res.data.expires_in);
 
           return $q.when(res);
         });
@@ -64,13 +67,17 @@
         Retorna o token do usuário no Clever
     */
     factory.clever.token = function (tokenFB) {
-      var url = "http://localhost:8000/v1/loginorcreate";
+      var url = "http://cleverest.herokuapp.com/v1/loginorcreate";
 
       return $http
         .post(url, {user_access_token: tokenFB})
         .then(function (res) {
+
+          var timeNow = Date.now()  ;
+
           localStorage.setItem('accessToken', res.data.access_token);
           localStorage.setItem('refreshToken', res.data.refresh_token);
+          localStorage.setItem('expireTime', timeNow + res.data.expires_in);
 
           return $q.when(res);
         });
@@ -86,6 +93,14 @@
         .then(function (fbToken) {
           return factory.clever.token(fbToken);
         });
+    };
+
+    factory.isLoggedIn = function () {
+      var timeNow = Date.now();
+      console.log(localStorage.getItem('expireTime'));
+      return
+        localStorage.getItem('accessToken') &&
+        localStorage.getItem('expireTime') > timeNow;
     };
 
     return factory;
