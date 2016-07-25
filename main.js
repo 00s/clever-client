@@ -56840,15 +56840,11 @@ return jQuery;
     $scope.discipline = $stateParams.discipline;
     $scope.location = $stateParams.location;
 
-    if($stateParams.schedules){
-      $scope.datePicker = importScheduleHelper($stateParams.schedules);
-    } else {
-      $scope.datePicker = [
-        false, false, false, false, false,
-        false, false, false, false, false,
-        false, false, false, false, false
-      ];
-    }
+    $scope.datePicker = [
+      false, false, false, false, false,
+      false, false, false, false, false,
+      false, false, false, false, false
+    ];
 
     $scope.buscar = function () {
       var schedules = [];
@@ -56926,22 +56922,5 @@ return jQuery;
     .factory('SearchFactory', exports.SearchFactory)
     .controller('SearchCtrl', exports.SearchCtrl)
     .controller('ResultCtrl', exports.ResultCtrl);
-
-
-
-var importScheduleHelper = function (schedules) {
-  schedules = schedules.split(',');
-  console.log(schedules);
-  var result = [];
-
-  for(var a = 1; a <= 15; a++){
-    var exists = (schedules.indexOf('' + a) != -1);
-    result.push(exists);
-  }
-
-  console.log(result);
-
-  return result;
-};
 
 })();
