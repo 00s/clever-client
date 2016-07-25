@@ -204,8 +204,6 @@
   margin-left: 30px;
   display: inline-block;
   vertical-align: middle;
-  -webkit-filter: drop-shadow(0px 0px 1px #343434);
-  filter: drop-shadow(0px 0px 1px #343434);
 }
 #navbar i.facebook.icon {
   opacity: 1;
@@ -219,7 +217,6 @@
   opacity: 1;
   float: right;
   color: #fff;
-  text-shadow: 0 0 2px #000;
   line-height: 50px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
@@ -228,6 +225,9 @@
 }
 #navbar #dashboardCTA:hover {
   background-color: #283d7b;
+}
+#navbar.visible {
+  background-color: #60abcd;
 }
 body {
   margin: 0;
