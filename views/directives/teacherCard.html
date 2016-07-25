@@ -16,21 +16,25 @@
     </div>
     <div class="name">{{teacher.fullname}}</div>
     <div class="description">
-      {{teacher.bio}}
+      <!-- {{teacher.bio}} -->
+      Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as
+      pessoas mais interessantiss. Quem manda na minha terra sou Euzis!
     </div>
 
-    <teacher-card-details ng-show="cardCtrl.expanded">
-      
-      <div class="options">
-        <span class="favorite">
-          <i class="plus icon"></i>
-        </span>
-        <span class="more" ng-if="!cardCtrl.expanded"
-                           ng-click="cardCtrl.expand()">
-          Ver mais
-        </span>
+    <div class="details">
+      <div class="contact">
+        <i class="big mobile icon"></i>
+        (84) 98119 - 2030
       </div>
 
-    </teacher-card-details>
+      <clever:date-picker class="result"></clever:date-picker>
+    </div>
+
+    <div class="options">
+      <span class="favorite">
+        <i class="plus icon"></i>
+      </span>
+      <span class="more">Ver mais</span>
+    </div>
   </div>
 </div>

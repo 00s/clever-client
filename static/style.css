@@ -303,6 +303,10 @@ table.result.date.picker td {
 .ui.expanded.clever.card {
   height: auto;
 }
+.ui.expanded.clever.card .details {
+  display: block;
+  margin-bottom: 70px;
+}
 .ui.expanded.clever.card .contact {
   display: block;
   height: 40px;
@@ -373,8 +377,7 @@ table.result.date.picker td {
   font-family: 'Merriweather', serif;
   color: #6f6f6f;
 }
-.ui.clever.card .contact,
-.ui.clever.card .commentaries {
+.ui.clever.card .details {
   display: none;
 }
 .ui.clever.card:hover {
