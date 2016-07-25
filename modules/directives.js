@@ -10,9 +10,9 @@
       transclude: true,
       controller: function($element, $transclude) {
         var ctrl = this;
-        var content = $element.find('teacher-card-details'); 
+        var content = $element.find('teacher-card-details');
         var transcludedScope;
-      
+
         ctrl.expand = function() {
           $transclude(function(transEl, transScope) {
             content.append(transEl);
@@ -21,7 +21,7 @@
           });
           ctrl.expanded = true;
         };
-        
+
         ctrl.collapse = function() {
           transcludedScope.$destroy();
           transcludedScope = null;
@@ -111,9 +111,9 @@
           var pos = ($target.parent().index() - 1)  * 5 + $target.index();
 
           $target.toggleClass('selected');
+          $scope.datePicker.toggle(pos);
 
-          var previousValue = $scope.datePicker[pos];
-          $scope.datePicker[pos] = !previousValue;
+          console.log($scope.datePicker.data);
         });
       }
     };

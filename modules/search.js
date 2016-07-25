@@ -11,27 +11,36 @@
     $scope.discipline = $stateParams.discipline;
     $scope.location = $stateParams.location;
 
-    $scope.datePicker = [
-      false, false, false, false, false,
-      false, false, false, false, false,
-      false, false, false, false, false
-    ];
+    $scope.datePicker = {
+      data: [],
+      has: function (pos) {
+        return $scope.datePicker.data.indexOf(pos + '') != -1;
+      },
+      toggle: function (pos) {
+        dataPicker = $scope.datePicker.data;
+        var index = dataPicker.indexOf(pos + '');
+
+        if(index == -1){
+          dataPicker.push(pos + '');
+        } else {
+          dataPicker.splice(index, 1);
+        }
+      }
+    };
+
+    if($stateParams.schedules){
+      $scope.datePicker.data = $stateParams.schedules.split(',');
+    }
 
     $scope.buscar = function () {
-      var schedules = [];
-
-      $scope.datePicker.forEach(function (val, index) {
-        if(val){
-          schedules.push(index);
-        }
-      });
+      var schedules = $scope.datePicker.data.join(',');
 
       $state.go('search', {
         price_end: $scope.price_end,
         price_start: $scope.price_start,
         discipline: $scope.discipline,
         location: $scope.location,
-        schedules: schedules.join(',')
+        schedules: schedules
       });
     };
   };
@@ -59,12 +68,6 @@
   // ResultCtrl
 
   var ResultCtrl = function ($scope, $stateParams, SearchFactory) {
-    $scope.datePicker = {
-      m: [false, true, false, true, false],
-      t: [false, false, false, false, false],
-      n: [false, false, false, false, false]
-    };
-
     // $scope.buscar = function () {
     //   SearchFactory
     //     .buscar({
