@@ -40,6 +40,8 @@
       font-weight: 300;
 
       outline: none;
+      
+      color: $colors.primary;
     }
   }
 
@@ -49,6 +51,10 @@
     margin-left: 50%;
     transform: translateX(-50%);
   }
+  div.ui.button:hover{
+    background-color: $colors.primary;
+    color: white;
+  }
 
   /*--------------------
         Parte dos R$
@@ -57,11 +63,18 @@
     .statistic:first-child {
       margin-right: 0;
       margin-bottom: 0;
+      .value{
+        color: $colors.primary !important;
+      }
     }
 
     .statistic:last-child {
       margin-left: 0;
       margin-bottom: 0;
+      .value{
+        color: $colors.primary !important;
+      }
+  
     }
 
     .divider {

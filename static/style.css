@@ -38,6 +38,7 @@
   font-family: inherit;
   font-weight: 300;
   outline: none;
+  color: #ff2d00;
 }
 #formScreen div.ui.button {
   width: 200px;
@@ -45,13 +46,23 @@
   margin-left: 50%;
   transform: translateX(-50%);
 }
+#formScreen div.ui.button:hover {
+  background-color: #ff2d00;
+  color: #fff;
+}
 #formScreen .ui.statistics .statistic:first-child {
   margin-right: 0;
   margin-bottom: 0;
 }
+#formScreen .ui.statistics .statistic:first-child .value {
+  color: #ff2d00 !important;
+}
 #formScreen .ui.statistics .statistic:last-child {
   margin-left: 0;
   margin-bottom: 0;
+}
+#formScreen .ui.statistics .statistic:last-child .value {
+  color: #ff2d00 !important;
 }
 #formScreen .ui.statistics .divider {
   height: 28px;
@@ -215,11 +226,10 @@
   width: 240px;
   display: inline-block;
   background-color: transparent;
-  color: #fff;
   opacity: 1;
   float: right;
   color: #fff;
-  text-shadow: 0 0 1px #000;
+  text-shadow: 0 0 2px #000;
   line-height: 50px;
   text-align: center;
   font-family: 'Merriweather Sans', sans-serif;
@@ -271,7 +281,7 @@ table.date.picker td {
   background-color: #e4e4e4;
 }
 table.date.picker td.selected {
-  background-color: #60abcd;
+  background-color: #ff2d00;
 }
 table.date.picker .pickable {
   -o-transition: background 1s ease-out;
@@ -282,7 +292,7 @@ table.date.picker .pickable {
   cursor: pointer;
 }
 table.date.picker .pickable:hover {
-  background: #60abcd;
+  background: #ff2d00;
   -o-transition: background 0.2s ease-in;
   -ms-transition: background 0.2s ease-in;
   -moz-transition: background 0.2s ease-in;
@@ -456,7 +466,7 @@ table.result.date.picker td {
 }
 .ui.clever.card .options .more:hover,
 .ui.clever.card .options .favorite:hover {
-  background-color: #60abcd;
+  background-color: #ff2d00;
   color: #fff;
 }
 @media (min-width: 660px) {
