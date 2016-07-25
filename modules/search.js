@@ -5,17 +5,21 @@
   var exports = {};
 
   var SearchCtrl = function ($scope, $state, $stateParams) {
-    $scope.price_start = 50;
-    $scope.price_end = 90;
+    $scope.price_start = $stateParams.price_start || 50;
+    $scope.price_end = $stateParams.price_end || 90;
 
     $scope.discipline = $stateParams.discipline;
     $scope.location = $stateParams.location;
 
-    $scope.datePicker = [
-      false, false, false, false, false,
-      false, false, false, false, false,
-      false, false, false, false, false
-    ];
+    if($stateParams.schedules){
+      $scope.datePicker = importScheduleHelper($stateParams.schedules);
+    } else {
+      $scope.datePicker = [
+        false, false, false, false, false,
+        false, false, false, false, false,
+        false, false, false, false, false
+      ];
+    }
 
     $scope.buscar = function () {
       var schedules = [];
@@ -46,7 +50,6 @@
     search = {};
 
     search.buscar = function (query) {
-      console.log(query);
       return $http
         .post(url, query);
     };
@@ -76,9 +79,7 @@
           schedules: $stateParams.schedules
         })
         .then(function (data) {
-          console.log(data);
           $scope.teachers = data.data;
-          console.log(data);
         });
     };
 
@@ -96,5 +97,22 @@
     .factory('SearchFactory', exports.SearchFactory)
     .controller('SearchCtrl', exports.SearchCtrl)
     .controller('ResultCtrl', exports.ResultCtrl);
+
+
+
+var importScheduleHelper = function (schedules) {
+  schedules = schedules.split(',');
+  console.log(schedules);
+  var result = [];
+
+  for(var a = 1; a <= 15; a++){
+    var exists = (schedules.indexOf('' + a) != -1);
+    result.push(exists);
+  }
+
+  console.log(result);
+
+  return result;
+};
 
 })();
