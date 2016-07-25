@@ -1,65 +1,36 @@
 <div class="ui clever card">
-      <div class="content">
-        <div class="ui image">
-          <img src="{{teacher.profile_pic_url}}" />
-        </div>
-        <div class="rating">
-            <i class="fitted yellow star icon"></i>
-            <i class="fitted yellow star icon"></i>
-            <i class="fitted yellow half empty star icon"></i>
-            <i class="fitted yellow empty star icon"></i>
-            <i class="fitted yellow empty star icon"></i>
-        </div>
+  <div class="content">
+    <div class="ui image">
+      <img src="{{teacher.profile_pic_url}}" />
+    </div>
+    <div class="rating">
+        <i class="fitted yellow star icon"></i>
+        <i class="fitted yellow star icon"></i>
+        <i class="fitted yellow half empty star icon"></i>
+        <i class="fitted yellow empty star icon"></i>
+        <i class="fitted yellow empty star icon"></i>
+    </div>
 
-        <div class="pricing">
-          R$ {{teacher.price}}
-        </div>
-        <div class="name">{{teacher.fullname}}</div>
-        <div class="description">
-          {{teacher.bio}}
-        </div>
+    <div class="pricing">
+      R$ {{teacher.price}}
+    </div>
+    <div class="name">{{teacher.fullname}}</div>
+    <div class="description">
+      {{teacher.bio}}
+    </div>
 
-        <div class="contact">
-          <i class="big mobile icon"></i>
-          (84) 98119 - 2030
-        </div>
-        <clever:date-picker class="result"></clever:date-picker>
-        <div class="commentaries">
-          <h4>Avaliação dos Alunos</h4>
-
-          <div class="comment">
-            <div class="info">
-              <h5 class="name">João Santana</h5>
-              <div class="nota">
-                  <i class="fitted yellow star icon"></i>
-                  <i class="fitted yellow star icon"></i>
-                  <i class="fitted yellow half empty star icon"></i>
-                  <i class="fitted yellow empty star icon"></i>
-                  <i class="fitted yellow empty star icon"></i>
-              </div>
-            </div>
-            <p>She Hypnotizes You Into The Ghost Of Christmas Future</p>
-          </div>
-          <div class="comment">
-            <div class="info">
-              <h5 class="name">João Santana</h5>
-              <div class="nota">
-                  <i class="fitted yellow star icon"></i>
-                  <i class="fitted yellow star icon"></i>
-                  <i class="fitted yellow half empty star icon"></i>
-                  <i class="fitted yellow empty star icon"></i>
-                  <i class="fitted yellow empty star icon"></i>
-              </div>
-            </div>
-            <p>She Hypnotizes You Into The Ghost Of Christmas Future</p>
-          </div>
-        </div>
-      </div>
-
+    <teacher-card-details ng-show="cardCtrl.expanded">
+      
       <div class="options">
         <span class="favorite">
           <i class="plus icon"></i>
         </span>
-        <span class="more">Ver mais</span>
+        <span class="more" ng-if="!cardCtrl.expanded"
+                           ng-click="cardCtrl.expand()">
+          Ver mais
+        </span>
       </div>
-    </div>
+
+    </teacher-card-details>
+  </div>
+</div>
