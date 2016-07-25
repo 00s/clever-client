@@ -5,7 +5,30 @@
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: 'views/directives/teacherCard.html'
+      templateUrl: 'views/directives/teacherCard.html',
+      controllerAs: 'cardCtrl',
+      transclude: true,
+      controller: function($element, $transclude) {
+        var ctrl = this;
+        var content = $element.find('teacher-card-details'); 
+        var transcludedScope;
+      
+        ctrl.expand = function() {
+          $transclude(function(transEl, transScope) {
+            content.append(transEl);
+            transcludedScope = transScope;
+            transScope.teacherCardCardCollapse = ctrl.collapse;
+          });
+          ctrl.expanded = true;
+        };
+        
+        ctrl.collapse = function() {
+          transcludedScope.$destroy();
+          transcludedScope = null;
+          content.empty();
+          ctrl.expanded = false;
+        };
+      }
     };
   };
 
