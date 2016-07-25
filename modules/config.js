@@ -21,7 +21,7 @@
         }
       })
       .state('search', {
-        url: '/search',
+        url: '/search?price_start&price_end&discipline&location&schedules',
         views: {
           navbar: {
             templateUrl: 'views/navbar.html'

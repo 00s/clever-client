@@ -1,23 +1,23 @@
 <div class="clever form" ng-controller="SearchCtrl">
   <div class="slim field">
     <label>Estou procurando por uma <span class="bold">aula</span> de</label>
-    <input type="text" placeholder="Disciplina">
+    <input type="text" placeholder="Disciplina" ng-model="discipline">
   </div>
 
   <div class="slim field">
     <label>Na <span class="bold">cidade</span> de</label>
-    <input type="text" placeholder="Cidade">
+    <input type="text" placeholder="Cidade" ng-model="location">
   </div>
 
   <div class="field">
     <label><span class="bold">Custando</span> entre</label>
     <div class="ui tiny statistics">
       <div class="statistic">
-        <div class="value">R$ {{lowerPrice}}</div>
+        <div class="value">R$ {{price_start}}</div>
       </div>
       <span class="divider"> e </span>
       <div class="statistic">
-        <div class="value">R$ {{upperPrice}}</div>
+        <div class="value">R$ {{price_end}}</div>
       </div>
     </div>
   </div>

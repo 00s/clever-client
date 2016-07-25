@@ -20,7 +20,7 @@
         $('.slider').ready(function () {
           var slider = elm[0];
           noUiSlider.create(slider, {
-            start: [$scope.lowerPrice, $scope.upperPrice],
+            start: [$scope.price_start, $scope.price_end],
             margin: 15,
             connect: true,
             range: {
@@ -52,8 +52,8 @@
           slider.noUiSlider.on('update', function () {
             $(":focus").blur();
 
-            $scope.lowerPrice = parseInt(this.get()[0]);
-            $scope.upperPrice = parseInt(this.get()[1]);
+            $scope.price_start = parseInt(this.get()[0]);
+            $scope.price_end = parseInt(this.get()[1]);
 
             $scope.$apply();
           });
@@ -85,17 +85,12 @@
         $elm.find('td').bind('click', function () {
           var $target = $(this);
 
-          var posX = $target.index() - 1;
-          var posY = scheduleTable[$target.parent().index() - 1];
+          var pos = ($target.parent().index() - 1)  * 5 + $target.index();
 
-          // -1 é o header ("m", "t" ou "n")
-          if(posX != -1){
-            $target.toggleClass('selected');
+          $target.toggleClass('selected');
 
-            var previousValue = $scope.datePicker[posY][posX];
-            $scope.datePicker[posY][posX] = !previousValue;
-
-          }
+          var previousValue = $scope.datePicker[pos];
+          $scope.datePicker[pos] = !previousValue;
         });
       }
     };

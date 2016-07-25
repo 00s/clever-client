@@ -1,7 +1,7 @@
 <div class="ui clever card">
       <div class="content">
         <div class="ui image">
-          <img src="{{teacher.img}}">
+          <img src="{{teacher.profile_pic_url}}" />
         </div>
         <div class="rating">
             <i class="fitted yellow star icon"></i>
@@ -10,15 +10,15 @@
             <i class="fitted yellow empty star icon"></i>
             <i class="fitted yellow empty star icon"></i>
         </div>
-        
+
         <div class="pricing">
-          R$ {{teacher.valor}}
+          R$ {{teacher.price}}
         </div>
-        <div class="name">{{teacher.nome}}</div>
+        <div class="name">{{teacher.fullname}}</div>
         <div class="description">
-          {{teacher.desc}}
+          {{teacher.bio}}
         </div>
-        
+
         <div class="contact">
           <i class="big mobile icon"></i>
           (84) 98119 - 2030
